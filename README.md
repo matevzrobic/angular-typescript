@@ -1,3 +1,5 @@
+# I had to copy the whole project as original project was made from a University group account and was set to private.
+
 # Spletno programiranje 2020/2021
 
 Lastni projekt pri predmetu **Spletno programiranje** v študijskem letu **2020/2021**.
