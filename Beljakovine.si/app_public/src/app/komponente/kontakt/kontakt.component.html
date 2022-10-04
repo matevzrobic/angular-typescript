@@ -1,0 +1,72 @@
+<div class="row">
+    <form class="col-12 col-md-4" id="poslji_sporocilo" #myForm="ngForm" (ngSubmit)="sendMail(myForm)" [formGroup]="nodeMailerForm" enctype="text/plain" style="position: relative;left: 50px">
+        <br>
+        <p><strong>Sporočilo za administratorja</strong></p>
+        <div class="form-group">
+            <label>Ime</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_name">Nepravilno vnešeno ime!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="text" formControlName="ime" placeholder="ime">
+        </div>
+        <div class="form-group">
+            <label>Priimek</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_lname">Nepravilno vnešen priimek!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="text" formControlName="priimek" placeholder="priimek">
+        </div>
+        <div class="form-group">
+            <label>Email</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_email">Nepravilno vnešen email!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="email" id="email" formControlName="email" placeholder="nekdo@domena">
+        </div>
+        <div class="form-group">
+            <label>Sporočilo</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_msg">Prosim vnesite sporočila(ne more biti prazno)!</div>
+            <textarea class="form-control col-10 col-md-12 form-control-sm" name="msg" rows="4" formControlName="sporocilo"></textarea>
+        </div>
+        <br>
+        <p>
+            <input type="submit" [disabled]="!jePovezava()" class="btn btn-primary btn-sm" id="poslji_podatke1" value="Pošlji podatke">
+            <input type="reset" value="Zbriši podatke" class="btn btn-secondary btn-sm">
+            <span class="alert alert-danger"  *ngIf="mailNapaka" style="margin-left:5%">Vnesite vse podatke!</span>
+            <span class="alert alert-success" *ngIf="mailPoslan" style="margin-left:5%">Sporočilo poslano!</span>
+        </p>
+    </form>
+    <div class="col-12 offset-0 col-md-7 offset-md-1">
+        <div *ngIf="sporocilo" class="alert alert-warning">{{sporocilo}}</div>
+        <div class="table-responsive" *ngIf="!sporocilo">
+            <table class="table table-hover table-dark table-bordered shadow rounded" style="width: 90%; margin: 30px">
+                <tr>
+                    <th>Ime trgovine</th>
+                    <th>Lokacija</th>
+                    <th>Možen prevzem</th>
+                    <th *ngIf="jeAdmin"></th>
+                </tr>
+                <tr *ngFor="let trgovina of trgovine">
+                    <td><div class="trgovina" data-lng={{trgovina.lng}} data-lat={{trgovina.lat}}>{{trgovina.ime}}</div></td>
+                    <td>{{trgovina.lokacija}}</td>
+                    <td >{{trgovina.prevzem}}</td>
+                    <td *ngIf="jeAdmin"><button data-id={{trgovina._id}} [disabled]="!jePovezava()" (click)="odstraniTrgovino(trgovina)" class="btn btn-danger">-</button>
+                        </td>
+                </tr>
+            </table>
+        </div>
+        <button *ngIf="jeAdmin" [disabled]="!jePovezava()" type="button" (click)="prikazanObrazec=true" class="btn btn-dark float-right" style=" margin: 30px;margin-right: 70px">+</button>
+        <span class="col-12 offset-0 col-md-7 offset-md-1 alert alert-danger" *ngIf="obrazecNapaka">{{obrazecNapaka}}</span>
+        <table *ngIf="prikazanObrazec" class="table table-dark table-responsive" style="width: 90%; margin: 30px;">
+            <tr>
+                <th>Ime trgovine</th>
+                <th>Lokacija</th>
+                <th>Možen prevzem</th>
+                <th>Koordinata(lng)</th>
+                <th>Koordinata(lat)</th>
+            </tr>
+            <tr>
+                <td><input [(ngModel)]="novaTrgovina.ime" type="text" class="form-control form-control-sm"></td>
+                <td><input [(ngModel)]="novaTrgovina.lokacija" type="text" name="lokacija" class="form-control form-control-sm"></td>
+                <td><input [(ngModel)]="novaTrgovina.prevzem" type="da/ne" name="prevzem" class="form-control form-control-sm"></td>
+                <td><input [(ngModel)]="novaTrgovina.lng" type="text"  name="lng" class="form-control form-control-sm"></td>
+                <td><input [(ngModel)]="novaTrgovina.lat" type="text" name="lat" class="form-control form-group  form-control-sm"><input  (click)="dodajNovoTrgovino()" type="submit" class="btn btn-success" value="dodaj"></td>
+            </tr>
+        </table>
+        <datalist id="da/ne">
+            <option value="DA"></option>
+            <option value="NE"></option>
+        </datalist>
+        <app-map *ngIf="trgovine" [trgovine]="trgovine"></app-map>
+    </div>
+</div>

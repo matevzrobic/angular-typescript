@@ -1,0 +1,56 @@
+
+<body>
+    <div id="main" class="container-fluid">
+        <!-- Progress bar -->
+        <div class="col-12 col-md-12 col-lg-12">
+            <div id="bar-kosarica" class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 33.3%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><strong>Izbor izdelkov</strong></div>
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 33.3%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><strong>Potrditev nakupa</strong></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <!-- Izdelki -->
+        <form id="dodajNakup">
+        <div id="izdelki-kosarica" class="table-responsive">
+            <table class="table">
+                <!-- Naslovi -->
+                <tr>
+                    <th></th>
+                    <th>Izdelek</th>
+                    <th>Cena</th>
+                </tr>
+            {{#if sporocilo}}
+                    <div class="alert alert-warning col-11">{{sporocilo}}</div>
+            {{else}}
+            {{#each izdelki as |izdelek|}}
+                <tr>
+                    <td><img class="slika-izdelek-kosarica" src="{{izdelek.slika}}"></td>
+                    <td><tag name="izdelekKosarica" data-id="{{izdelek._id}}"></tag>{{izdelek.naziv}}</td>
+                    <td>{{izdelek.cena}} €</td>
+                </tr>
+            {{/each}}
+            {{/if}}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Skupna cena: <div id="skupnaCena">{{skupnaCena}}</div> €</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Unovčitev kupona -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div id="kupon-kosarica" class="input-group mb-3">
+                <input type="text" id="kuponText" class="form-control" placeholder="Unovčite kodo za popust" aria-label="kupon" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button type="button" id="kuponButton" class="btn btn-primary" onclick="preveriKupon()">Potrdi</button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 6%">
+            <div class="row m-0">
+                <input type="submit" class="btn btn-outline-success" value="Zaključi nakup" id="naprej-kosarica">
+            </div>
+        </div>
+        </form>
+    </div>
+</body>

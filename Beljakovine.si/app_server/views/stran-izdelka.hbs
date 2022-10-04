@@ -1,0 +1,40 @@
+
+<body style="background-image: none;">
+  <div class="row">
+      <div class="col-lg-5 col-xl-4 col-md-6 mb-4">
+          <img  id="slika" src=../{{slika}} class="slika-izdelek">
+      </div>
+
+      <div class="col-lg-7 col-xl-8 col-md-6 mb-4">
+          <h2 id="naziv">{{naziv}}</h2>
+          <hr>
+          <h1 id="cena" style="display: inline;">{{cena}}</h1>
+          <h1 style="display: inline;"> €</h1> 
+          <br>  
+          <button style="text-align:center" class="button" onclick="dodajanjeVKosarico()">
+              Dodaj v košarico
+          </button>
+          <p class="rating">{{{zvezdice ocenaStrokovnjaka}}}</p>
+          <div id="ocenaIme" style="display: none;">Ocena:</div><div id="ocena" style="display: none;">{{ocenaStrokovnjaka}}</div>
+          <hr>
+          <h3>Opis:</h3>
+          <p id="opis">{{opis}}</p>
+          <hr>
+          <div class="row mt-3">
+      </div>
+      <a href="/izdelki">
+        <button style="text-align:center" class="button" onclick="deleteIzdelka()" id="brisanjeIzdelka">
+            Izbriši izdelek
+        </button>
+      </a>
+      <button style="text-align:center" onclick="zacniUrejanje()" class="button">
+          Uredi izdelek
+      </button>
+      <a id="preusmeriPosodabljaj" href="/izdelki">
+        <button style="text-align:center; display:none" class="button" id="potrdiUrejanje" onclick="putIzdelka()" id="urejanjeIzdelka">
+            Potrdi urejanje
+        </button>
+      </a>
+      <div id="napakaUrejanjaIzdelka"></div>
+  </div>
+</body>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registracija</title>
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/registracija.js"></script>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body style="background-image: none;">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="Beljakovine.si/public/img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="izdelki.html">Izdelki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kategorije
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Whey proteini</a>
+                        <a class="dropdown-item" href="#">Veganski proteini</a>
+                        <a class="dropdown-item" href="#">Bcaa</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                        <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                    </ul>
+                    
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                    <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                    <div id="login_gumb" class="login_popup">
+                        <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                    </div>
+                    </div>  
+                </div>
+            </nav>
+        </div>
+        <br>
+        <form id="form" class="center">
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="d-flex justify-content-center">Registracija</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="fname"><b>Ime</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input id="fname" class="inputOkna" placeholder="Vnesi ime" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="lname"><b>Priimek</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input id="lname" class="inputOkna" placeholder="Vnesi priimek" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="email"><b>E-mail</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input id="email" class="inputOkna" placeholder="Vnesi e-mail" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                                <label class="d-flex justify-content-center" style="font-size: 12px" for="psw"><b>Geslo</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input type="password" id="psw" class="inputOkna" placeholder="Vnesi geslo" required>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                
+                <div style="text-align:center;" class="row">
+                    <div class="col-md-12">
+                        <label style="color: black; font-size: 12px" for="pogoji">
+                            Prebral sem <a href="pogoji.html">pogoje uporabe</a> in se z njimi strinjam.
+                        </label>
+                        <input type="checkbox" id="pogoji" name="pogoji" value="pogoji" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label style="color: black; font-size: 12px" for="akcija">
+                            Strinjam se, da me obveščate o aktualni ponudbi
+                            in akcijah.
+                        </label>
+                        <input type="checkbox" id="akcija" name="akcija" value="Obvescanje">
+                    </div>
+                </div>
+
+                <br>
+
+                <div id="napakaIme" style="display: none" class="alert alert-danger" role="alert" >
+                    Prosim vnesite veljavno ime!
+                </div>
+                <div id="napakaPriimek" style="display: none" class="alert alert-danger" role="alert" >
+                    Prosim vnesite veljaven priimek!
+                </div>
+                <div id="napakaEmail" style="display: none" class="alert alert-danger" role="alert" >
+                    Prosim vnesite veljaven e-mail naslov!
+                </div>
+                <div id="napakaGeslo" style="display: none" class="alert alert-danger" role="alert" >
+                    Geslo mora imeti vsaj eno majhno črko, eno veliko črko, en znak, eno število in dolgo mora biti vsaj 8 znakov!
+                </div>
+
+                <br>
+
+                <div style="text-align:center" class="center">
+                    <button type="submit" class="button">Registracija</button>
+                </div>
+
+        </form>
+    </body>
+</html>

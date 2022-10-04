@@ -1,0 +1,72 @@
+<body style="background-image: none;">
+    
+    <br>
+    <div class="d-flex justify-content-center">
+        <form id="calc-form" class="calc-form">
+            <div class="form-polja">
+                <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12">
+                    <label class="pripis">Starost:</label>
+                    <div class="polje-items">
+                        <div class="polje polje-large">         
+                            <input type="text" id="age" inputmode="numeric" pattern="[0-9]*" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <label for="height" class="pripis">Višina:</label>
+                    <div class="polje-items">
+                        <div class="polje polje-medium">
+                            <input placeholder="v cm" type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <label for="weight" class="pripis">Teža:</label>
+                    <div class="polje-items">
+                        <div class="polje polje-large">
+                            <input placeholder="v kg" type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 15px">
+                    <select id="gender" name="gender">
+                        <option value="Male">Moški</option>
+                        <option value="Female">Ženska</option>
+                    </select>
+                </div>
+                <br>
+            </div>
+            <div>
+                <button id="calc" class="btn-calc">Izračunaj</button>
+            </div>
+        </form>
+    </div>
+    <div class="d-flex justify-content-center" id="results" style="display:none;"></div>
+    
+    
+    <br><br><br><br><hr>
+    <!-- API calorie calculator -->
+    <div class="d-flex justify-content-center" id="results" style="display:none;">
+        <form id="apiForm" class="col-12 col-sm-6 col-md-4 col-lg-3">
+            
+            <div class="form-polja">
+               
+                <label for="query" class="pripis">Iskanje hrane (angleščina):</label><br>
+                <div class="polje-items">
+                    <div class="polje polje-large">         
+                        <input type="text" name="query" id="query" placeholder="1 large apple" required>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div>
+                <button id="queryCalc" class="btn-calc">Pridobi podatke</button>
+            </div>
+            
+        </form>
+    </div>
+    <br>
+    <div id="results-here" class="col-10 col-lg-6 col-xl-6" style="margin:auto;"></div>
+    
+</body>

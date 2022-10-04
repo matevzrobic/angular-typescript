@@ -1,0 +1,62 @@
+
+<div *ngIf="!nakupZakljucen" id="main" class="container-fluid">
+  <!-- Progress bar -->
+  <div>
+    <!--    <div class="col-12 col-md-12 col-lg-12">-->
+    <!--        <div id="bar-kosarica" class="progress">-->
+    <!--            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 33.3%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><strong>Izbor izdelkov</strong></div>-->
+    <!--            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 33.3%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><strong>Potrditev nakupa</strong></div>-->
+    <!--            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div *ngIf="sporocilo" class="alert alert-warning center" style="margin-top:2%; width:60%">{{sporocilo}}</div>
+    <!-- Izdelki -->
+    <div *ngIf="izdelki.length > 0" id="izdelki-kosarica" class="table-responsive">
+      <table class="table">
+        <!-- Naslovi -->
+        <tr>
+          <th></th>
+          <th>Izdelek</th>
+          <th>Cena</th>
+        </tr>
+        <tr *ngFor="let izdelek of izdelki">
+          <td><img class="slika-izdelek-kosarica" src="../../../assets/{{izdelek.slika}}"></td>
+          <td><tag name="izdelekKosarica" data-id="{{izdelek._id}}"></tag>{{izdelek.naziv}}</td>
+          <td>{{izdelek.cena}} €</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Skupna cena: {{skupnaCena | decimalke: 2 | currency}}</td>
+        </tr>
+      </table>
+    </div>
+    <!-- Unovčitev kupona -->
+    <div *ngIf="izdelki.length > 0" class="col-12 col-md-6 col-lg-4">
+      <!--            <div id="kupon-kosarica" class="input-group mb-3">-->
+      <!--              <div class="input-group-append">-->
+      <!--                <input [(ngModel)]="kuponNiz" type="text" class="form-control" placeholder="Unovčite kodo za popust">-->
+      <!--                <input type="submit" id="kuponButton" class="btn btn-primary" (click)="preveriKupon()">-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <input [(ngModel)]="kuponNiz" type="text" name="niz" class="form-control form-control-sm">
+      <input [disabled]="uporabljenKupon || !jePovezava()" (click)="preveriKupon()" type="submit" class="btn btn-success" value="dodajKupon">
+      <div class="alert alert-success" *ngIf="kuponSporocilo">{{kuponSporocilo}}</div>
+      <div class="alert alert-danger" *ngIf="kuponNapaka">{{kuponNapaka}}</div>
+
+    </div>
+    <div style="margin-top: 6%">
+      <div class="row m-0">
+        <button (click)="nazaj()" type="button" id="nazaj-kosarica"class="btn btn-outline-secondary">Nazaj</button>
+        <input [disabled]="izdelki.length == 0 || !jePovezava()" (click)="dodajNakup()" type="submit" class="btn btn-outline-success" value="Zaključi nakup" id="naprej-kosarica">
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="napakaNakup">{{napakaNakup}}</div>
+  </div>
+</div>
+<div *ngIf="nakupZakljucen" class="center" style="margin-top: 10%">
+  <h2 class="d-flex justify-content-center">Hvala za vaš nakup!</h2>
+  <div style="text-align:center; padding-top: 1%" class="center">
+    <button (click)="nazaj()" class="btn btn-outline-secondary">Nazaj na katalog</button>
+  </div>
+</div>

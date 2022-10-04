@@ -1,0 +1,69 @@
+[
+    {
+      "izdelki": [
+        {
+          "naziv": "Gold Whey Protein Chocolate 2,3kg",
+          "cena": 49.99,
+          "ocena_strokovnjaka": 4,
+          "opis": "whey",
+          "slika": "img/Gold_Whey_CHOCOLATE_1000_r.jpg"
+        },
+        {
+          "naziv": "USN 100% Plant Proteini 900g",
+          "cena": 24.99,
+          "ocena_strokovnjaka": 3,
+          "opis": "vegan",
+          "slika": "img/usn-100-plant-proteini-900g.jpg"
+        }
+      ],
+      "uporabnik":
+      {
+        "ime": "Simon",
+        "priimek": "Konj",
+        "email": "simonkonjfejkmail@gmail.com",
+        "geslo": "Geslo123/"
+      },
+      "datum": "2020-11-25T00:00:00.000Z",
+      "skupnaCena": 74.98
+    },
+    {
+      "izdelki": [
+        {
+          "naziv": "Light Digest Whey Protein 500g",
+          "cena": 14.99,
+          "ocena_strokovnjaka": 5,
+          "opis": "whey",
+          "slika": "img/light-digest-whey-protein.jpg"
+        },
+        {
+          "naziv": "Scitec Whey Protein Isolate 2kg",
+          "cena": 59.99,
+          "ocena_strokovnjaka": 4,
+          "opis": "whey",
+          "slika": "img/scitec-whey-protein-isolate.jpg"
+        },
+        {
+          "naziv": "Impact Whey Protein 1kg",
+          "cena": 19.99,
+          "ocena_strokovnjaka": 5,
+          "opis": "whey",
+          "slika": "img/myprotein-impact-whey.jpg"
+        }
+      ],
+      "uporabnik":
+      {
+        "ime": "Matija",
+        "priimek": "Močan",
+        "email": "matijamocanfejkmail@gmail.com",
+        "geslo": "Mat!ja33"
+      },
+      "kupon":
+      {
+        "niz": "Katja20",
+        "popust": 20,
+        "datum": "2021-11-28T00:00:00.000Z"
+      },
+      "datum": "2020-11-21T00:00:00.000Z",
+      "skupnaCena": 75.976
+    }
+]

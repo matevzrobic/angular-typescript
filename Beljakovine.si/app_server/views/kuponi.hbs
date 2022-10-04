@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-12 offset-0 col-md-7 offset-md-1">
+        {{#if sporocilo}}
+            <div class="alert alert-warning col-11">{{sporocilo}}</div>
+        {{else}}
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" style="margin-top:3%">
+                    <tr>
+                        <th>Niz kupona</th>
+                        <th>Popust (%)</th>
+                        <th>Datum poteka</th>
+                        <th></th>
+                    </tr>
+                    {{#each kuponi as |kupon|}}
+                        <tr>
+                            <td>{{kupon.niz}}</td>
+                            <td>{{kupon.popust}}</td>
+                            <td>{{trimString kupon.datum}}</td>
+                            <td><button data-id={{kupon._id}} onclick="posljiDelete(this)" class="btn btn-danger">x</button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </table>
+            </div>
+        {{/if}}
+        <button type="button" onclick="dodajTabelo()" class="btn btn-dark float-right" style=" margin: 30px;margin-right: 70px">+</button>
+        <div class="alert alert-danger" style="display:none;" id="popraviPoljeVnosaKupon">Popravite polja vnosa.</div>
+        <table class="table table-striped table-responsive" style="width: 90%; margin: 30px; display:none" id="dodajTabelo">
+            <tr>
+                <th>Niz kupona</th>
+                <th>Popust (%)</th>
+                <th>Datum poteka</th>
+            </tr>
+            <tr>
+                <td>Samo črke in številke brez šumnikov</td>
+                <td>1-99</td>
+                <td>YYYY-MM-DD, letnica > 2000, veljaven mesec in dan</td>
+            </tr>
+            <form method="post" action="" id="dodajKupon">
+                <tr>
+                    <td><input type="text" name="niz" class="form-control form-control-sm"></td>
+                    <td><input type="text" name="popust" class="form-control form-control-sm"></td>
+                    <td><input type="text" name="datum" class="form-control form-control-sm"></td>
+                    <td><input  type="submit" class="btn btn-success" value="dodajKupon"></td>
+                </tr>
+            </form>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<body>
+    <div class="row" id="vsi_izdelki" style="padding-left: 10%; padding-right:10%">
+        {{#if sporocilo}}
+            <div class="alert alert-warning col-11">{{sporocilo}}</div>
+        {{else}}
+                {{#each izdelki as |izdelek|}}
+                <div class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type={{izdelek.kategorija}}>
+                    <div class="card h-70 sencenje">
+                        <a href="/izdelki/{{izdelek._id}}"><img class="card-img-top; slike-katalog" src={{izdelek.slika}} alt={{izdelek.naziv}}></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                            <a href="/izdelki/{{izdelek._id}}">{{izdelek.naziv}}</a>
+                            </h4>
+                            <h5>{{izdelek.cena}} €</h5>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+        {{/if}}
+        <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+            <div class="card h-70 sencenje">
+                <a href="/dodajanje"><img class="card-img-top; slike-katalog" src="img/plus.jpg" alt="ARMOUR SPORT HI-LO SS"></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="/dodajanje">Dodaj izdelek</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

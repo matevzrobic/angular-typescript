@@ -1,0 +1,46 @@
+.slika-izdelek {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+#stIzdelkov1 {
+    width:50%
+}
+#stIzdelkov2 {
+    width:50%
+}
+#kupon {
+    margin-top: 7%;
+    margin-left: 3%;
+}
+#nazaj {
+    margin-left: 5%;
+}
+#naprej {
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+#bar {
+    margin-top: 3%;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#izdelki {
+    margin-top: 4%;
+}
+
+.naslov {
+    margin-top: 6%;
+    margin-left: 25%;
+}
+.izberiNaslov {
+    margin-top: 4.5%;
+    margin-left: 0.9%;
+}
+.nacin {
+    margin-top: 3%;
+    margin-left: 25%;
+}

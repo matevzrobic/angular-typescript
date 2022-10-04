@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" style="width: 100%;">
+    <head>
+        <title>Beljakovine.si</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body style="height: 3900px;">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="izdelki.html">Izdelki</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kategorije
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Whey proteini</a>
+                        <a class="dropdown-item" href="#"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+              <br>
+            <div id="pomik_tabele">
+                <br>
+                <table class="table table-hover" style="width: auto">
+                    <tr>
+                        <td><a href="izdelki.html"><img src="img/Gold Whey-CHOCOLATE 1000_r.jpg" class="zoom"></a></td>
+                        <td><a href="izdelki.html"><img src="img/vegan-choco_r.jpg" class="zoom"></a></td>
+                        <td><a href="izdelki.html"><img src="img/bcaa.jpg" class="zoom" alt="bcaa's"></a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><a href="izdelki.html"><img src="img/men_clothes.jpg" class="zoom" style="width: 500px;"></a></td>
+                        <td><a href="izdelki.html"><img src="img/women_closthes.jpeg" class="zoom"></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="horizontal">
+                <h1 style="color: orange;border: 1px; border-color: grey;">O nas</h1><p><strong>Smo mladi slovenski podjetniki in naša želja je da ljudem ponudimo 
+                    kaj se da poceni ampak vseeno kvalitetna prehranska dopolnila. Vsi smo smo že kdaj bili na tej točki 
+                    ko smo začeli in nismo vedeli kaj je za nas dobro in kaj ekonomsko ugodno, zato smo razvili slednjo podjetniško idejo.
+                </strong></p>
+            </div>
+            <img src="img/protein_shake1.jpg" class="slika"></img>
+
+            <br>
+            <div class="horizontal2">
+                <h1 style="color: orange;border: 1px; border-color: grey;">Zakaj so naši proteini najboljši?</h1><p><strong>Naši proteini so narejeni iz zelo kakovostnih materialov, z minimalno dodanimi sladili
+                    in umetnimi sintetičnimi snovmi. Produkti so bili testirani na večih raziskavah, kjer so dosegali odlične rezulate,
+                    pohvalimo pa se lahko tudi z nagrado za slovenski top produkt leta. Ne bo vam žal če nas poskusite...
+                </strong></p>
+            </div>
+            <img src="img/happy.jpg" class="slika" style="top:2000px"></img>
+
+            <div style="position: absolute; top: 3000px; left: 40%">
+                <div class="vprasanje"><h2 style="color: brown;">Ste že naš član?                            <button type="button" class="btn btn-success" onclick="prikaziLog()">Seveda</button>                   <button onclick="prikaziReg()" type="button" class="btn btn-danger">          Ne še</button>
+                    </h2>
+                </div>
+                <br>
+                <div id="reg" class="login_okvir"><h3>Postanite naš član!!</h3>
+                    <form action="POST">
+                    <div class="form-group">
+                        <label>Ime</label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Ime">
+                    </div>
+                    <div class="form-group">
+                        <label>Priimek</label>
+                        <input class="form-control  form-control-sm" type="text" placeholder="Priimek">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control form-control-sm" type="email" placeholder="nekdo@domena">
+                    </div>
+                    <div class="form-group">
+                        <label>Geslo</label>
+                        <input class="form-control form-control-sm" type="password" placeholder="Geslo">
+                    </div>
+                    <div class="form-group">
+                        <label>Ponovite geslo</label>
+                        <input class="form-control form-control-sm" type="password" placeholder="Geslo">
+                    </div>
+                    <br>
+                        <p>
+                            <input type="submit" class="btn btn-dark btn-sm" value="Registracija">
+                            <input type="reset" class="btn btn-outline-dark btn-sm" value="Zbriši podatke">
+                        </p>
+                    </form>
+                </div>
+
+                <div id="log" class="login_okvir"><h3>Kaj še čakate, prijavite se!!</h3>
+                    <form action="POST">
+                    <div class="form-group">
+                        <label>Uporabniško ime</label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Uporabniško ime">
+                    </div>
+                    <div class="form-group">
+                        <label>Geslo</label>
+                        <input class="form-control  form-control-sm" type="password" placeholder="password">
+                    </div>
+                    <br>
+                        <p>
+                            <input type="submit" class="btn btn-dark btn-sm" value="Prijava">
+                        </p>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

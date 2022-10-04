@@ -1,0 +1,31 @@
+<div class="">
+  <div class="col-12">
+    <h1>Dodaj komentar</h1>
+  </div>
+</div>
+<div class="row">
+    <form class="col-12 col-md-4" id="poslji_sporocilo" style="position: relative; left: 20px">
+        <div class="form-group">
+            <label>Email</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_email">Nepravilno vnešen email!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="email" id="email" name="email" placeholder="nekdo@domena">
+        </div>
+            <label>Ocena</label>
+          <select id="ocena" class="form-control-small">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        <div class="form-group">
+            <label>Komentar</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_msg">Prosim vnesite sporočila(ne more biti prazno)!</div>
+            <textarea class="form-control col-10 col-md-12 form-control-sm" name="msg" rows="4" name="sporocilo"></textarea>
+        </div>
+        <br>
+        <p>
+            <input type="submit" class="btn btn-primary btn-sm" id="poslji_podatke1" value="Dodaj komentar">
+            <input type="reset" value="Zbriši podatke" class="btn btn-secondary btn-sm">
+        </p>
+    </form> 
+  </div>
+</div>

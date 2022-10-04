@@ -1,0 +1,18 @@
+[
+  {
+    "admin": false,
+    "ime": "Matija",
+    "priimek": "Mocan",
+    "email": "matija.mocan@gmail.com",
+    "nakljucnaVrednost": "2332f596bf62682bec8560ed6a9ba3e3",
+    "zgoscenaVrednost": "5c6c3da35d44616f8c558c550980f0681eb94893c6e71ac7f72629fc6cb890b655837417c7d47c4cddf90b35c4d80aa9f7f05394e2fd50faee625db06b3ba98e"
+  },
+  {
+    "admin": true,
+    "ime": "Admin",
+    "priimek": "Administrator",
+    "email": "admin@gmail.com",
+    "nakljucnaVrednost": "27455567c80596d27a8c4c556ff77f22",
+    "zgoscenaVrednost": "ea22e2bcc067c272bd8f745e357e64cd28ecf0fd077041cd07492fe43485027e574fdc1e3a40ed3127f6bc8edf7b79dc8b0fffc9f4d10aeb275047971794f3f6"
+  }
+]

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="sl">
+    <head>
+        <title>Plačilo in dostava</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <link href="css/checkout1.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="main" class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="izdelki.html">Izdelki</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kategorije
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Whey proteini</a>
+                                <a class="dropdown-item" href="#">Veganski proteini</a>
+                                <a class="dropdown-item" href="#">Bcaa</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                                <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                        <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                        <div id="login_gumb" class="login_popup">
+                            <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Progress bar -->
+            <div id="bar" class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 33.3%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><strong>Izbor izdelkov</strong></div>
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 33.3%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><strong>Potrditev nakupa</strong></div>
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:33.4%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><strong>Dostava in plačilo</strong></div>
+            </div>
+            <!-- Izbira naslova za dostavo-->
+            <form>
+                <div class="naslov">
+                    <h2>Naslov za dostavo</h2>
+                    <div class="row m-0">
+                        <!-- Kartica -->
+                        <div class="card" style="width: 25em; margin-top: 1%;">
+                            <div class="card-body">
+                                <h5 class="card-title">Privzeti naslov</h5>
+                                <p style="font-size: 0.8em;" class="card-text">Janez Novak <br> Dunajska cesta 120 <br> 1000, Ljubljana</p>
+                                <a href="profil.html#profil" class="card-link" style="float: right;">Spremenite privzeti naslov</a>
+                            </div>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="izberiNaslov">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="izbiraNaslova" id="privzetiNaslov" value="option1" checked>
+                                <label class="form-check-label" for="privzetiNaslov">
+                                    Privzeti naslov
+                                </label>
+                            </div>
+                            <div class="form-check" style="margin-top: 2%">
+                                <input class="form-check-input" type="radio" name="izbiraNaslova" id="drugNaslov" value="option2">
+                                <label class="form-check-label" for="drugNaslov">
+                                    Izberite drug naslov
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skrito polje-->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="drugNaslov" style="margin-top: 2%; margin-left:-3.5%">
+                            <input type="text" class="form-control" placeholder="Ime" style="margin-top: 1%" disabled>
+                            <input type="text" class="form-control" placeholder="Priimek" style="margin-top: 1%" disabled>
+                            <input class="form-control" type="text" placeholder="Naslov" style="margin-top: 5%" disabled>
+                            <input type="text" class="form-control" placeholder="Mesto" style="margin-top: 1%" disabled>
+                            <input type="text" class="form-control" placeholder="Poštna številka" style="margin-top: 1%" disabled>
+                        </div>
+                    </div>
+                </div>
+                <!-- Izbira načina dostave -->
+                <div class="nacin">
+                    <h2>Način dostave</h2>
+                    <div class="izberiDostavo" Style="margin-top: 1%">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="izbiraNacina" id="Posta" value="option1" checked>
+                            <label class="form-check-label" for="Posta">
+                                Pošta Slovenije - 3.00 €
+                            </label>
+                            <small class="text-muted"><br>Predvidena dostava: 5. 11. 2020</small>
+                        </div>
+                        <div class="form-check" style="margin-top: 0.4%">
+                            <input class="form-check-input" type="radio" name="izbiraNacina" id="GLS" value="option2">
+                            <label class="form-check-label" for="GLS">
+                                GLS - 5.00 €
+                            </label>
+                            <small class="text-muted"><br>Predvidena dostava: 3. 11. 2020</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plačilo -->
+                <div class="nacin">
+                    <h2>Način plačila</h2>
+                    <div class="izberiPlacilo" style="margin-top: 1%">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="izbiraPlacila" id="poPrevzemu" value="option3" checked>
+                            <label class="form-check-label" for="poPrevzemu">
+                                Plačilo po prevzemu
+                            </label>
+                        </div>
+                        <div class="form-check" style="margin-top: 0.4%">
+                            <input class="form-check-input" type="radio" name="izbiraPlacila" id="kartica" value="option1">
+                            <label class="form-check-label" for="kartica">
+                                Kreditna kartica
+                            </label>
+                        </div>
+                    </div>
+                    <div style="padding-top: 2%">
+                        <div class="row m-0">
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-name">Imetnik kartice</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="Ime Priimek" required>
+                                <small class="text-muted">Polno ime, kot je napisano na kartici</small>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-number">Številka kartice</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                            </div>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-expiration">Datum poteka</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="XX-XX" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-expiration">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="XXX" required>
+                                <small class="text-muted">Koda na zadnji strani kartice</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top: 6%">
+                <div class="row m-0">
+                    <a href="checkout1.html" role="button" id="nazaj"class="btn btn-outline-secondary">Nazaj</a>
+                    <button type="button" id="naprej"class="btn btn-success">Končajte z nakupom</button>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		</div>
+	</body>
+</html>

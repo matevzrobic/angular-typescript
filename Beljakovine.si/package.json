@@ -1,0 +1,52 @@
+{
+  "name": "beljakovine.si",
+  "version": "1.2.3",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "publishheroku": "cd ../ && git subtree push --prefix Beljakovine.si heroku master",
+    "test": "mocha test --bail --reporter mochawesome --reporter-options autoOpen=true,reportDir=test/porocilo,reportFilename=porocilo,json=false",
+    "uvoz-izdelki": "docker cp ./app_api/models/podatki-izdelki.json sp-beljakovine-mongodb:/podatki-izdelki.json; docker exec -it sp-beljakovine-mongodb mongoimport --db Beljakovine --collection Izdelki --mode upsert --upsertFields naziv --jsonArray --file podatki-izdelki.json; docker exec -it sp-beljakovine-mongodb rm -rf podatki-izdelki.json;",
+    "uvoz-kuponi": "docker cp ./app_api/models/podatki-kuponi.json sp-beljakovine-mongodb:/podatki-kuponi.json; docker exec -it sp-beljakovine-mongodb mongoimport --db Beljakovine --collection Kuponi --mode upsert --upsertFields naziv --jsonArray --file podatki-kuponi.json; docker exec -it sp-beljakovine-mongodb rm -rf podatki-kuponi.json;",
+    "uvoz-trgovine": "docker cp ./app_api/models/podatki-trgovine.json sp-beljakovine-mongodb:/podatki-trgovine.json; docker exec -it sp-beljakovine-mongodb mongoimport --db Beljakovine --collection Trgovine --mode upsert --upsertFields naziv --jsonArray --file podatki-trgovine.json; docker exec -it sp-beljakovine-mongodb rm -rf podatki-trgovine.json;",
+    "uvoz-uporabniki": "docker cp ./app_api/models/podatki-uporabniki.json sp-beljakovine-mongodb:/podatki-uporabniki.json; docker exec -it sp-beljakovine-mongodb mongoimport --db Beljakovine --collection Uporabniki --mode upsert --upsertFields naziv --jsonArray --file podatki-uporabniki.json; docker exec -it sp-beljakovine-mongodb rm -rf podatki-uporabniki.json;",
+    "brisi": "docker exec -it sp-beljakovine-mongodb bash -c \"mongo Beljakovine --eval 'db.Izdelki.remove({});db.Kuponi.remove({});db.Nakupi.remove({});db.Trgovine.remove({});db.Uporabniki.remove({});'\"",
+    "izvoz-produkcija": "docker exec -it sp-beljakovine-mongodb bash -c \"mongodump -h localhost -d Beljakovine -o ./\"; docker exec -it sp-beljakovine-mongodb bash -c \"mongorestore --host atlas-129sfn-shard-0/beljakovine-shard-00-00.olpjn.mongodb.net:27017,beljakovine-shard-00-01.olpjn.mongodb.net:27017,beljakovine-shard-00-02.olpjn.mongodb.net:27017 --ssl --username uporabnik --authenticationDatabase admin -d Beljakovine ./Beljakovine\"; docker exec -it sp-beljakovine-mongodb bash -c \"rm -rf ./Beljakovine\""
+  },
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.8"
+  },
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axios": "^0.21.0",
+    "cookie-parser": "*",
+    "cors": "^2.8.5",
+    "debug": "*",
+    "dotenv": "^8.2.0",
+    "express": "*",
+    "express-jwt": "^6.0.0",
+    "hbs": "*",
+    "http-errors": "*",
+    "jsdom": "^16.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "*",
+    "node-sessionstorage": "^1.0.0",
+    "nodemailer": "^6.4.17",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chromedriver": "^87.0.4",
+    "cors": "^2.8.5",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "selenium-webdriver": "^4.0.0-alpha.8"
+  }
+}

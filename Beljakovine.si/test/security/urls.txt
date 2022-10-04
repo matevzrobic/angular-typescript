@@ -1,0 +1,10 @@
+http://localhost:3000/
+http://localhost:3000/prijava
+http://localhost:3000/registracija
+http://localhost:3000/kontakt
+http://localhost:3000/izdelki
+http://localhost:3000/kalkulator
+http://localhost:3000/izdelki/5ff1b6be1435f800121188d8
+http://localhost:3000/izdelki/5ff1b6be1435f800121188d9
+http://localhost:3000/kuponi
+

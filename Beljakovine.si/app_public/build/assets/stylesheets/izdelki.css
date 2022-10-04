@@ -1,0 +1,97 @@
+.slike-katalog {
+
+    padding: 5px;
+    height: 200px;
+    border-radius: 4px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+.filter-izdelkov {
+    padding-top: 50px;
+    width: 250px;
+    float: left;
+    margin-left: 3%;
+  }
+
+.slika-izdelek {
+float: left;
+width: 400px;
+margin-top: 5%;
+margin-left: 10%;
+} 
+
+
+.sencenje{
+  border-radius: 5px;
+  border:outset orange;
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+}
+ 
+.sencenje:hover {
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.75);
+  transform: 0.5s;
+}
+
+.na-sredini{
+  text-align: center;
+}
+
+.checked {
+  color: orange;
+}
+
+.komentar-levo {
+  float: left;
+  padding-left: 5%;
+}
+
+.komentar-desno {
+  padding-left: 20%;
+}
+
+.button {
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 2px solid rgb(238, 143, 1);
+    border-radius: 4px;
+    padding: 12px 28px;
+    font-size: 16px;
+}
+
+.lg-field {
+  width: 100%;
+  border: 2px solid rgb(238, 143, 1);
+  border-radius: 4px;
+  
+}
+
+.sm-field {
+  width: 100%;
+  border: 2px solid rgb(238, 143, 1);
+  border-radius: 4px;
+}
+.komentar {
+  margin-right: 5px; 
+  margin-left: 5px;
+  margin-bottom: 0.5em;
+}
+.komentar > div {
+  padding:0.5em;
+}
+.komentar > div:first-child {
+  margin-top:1em;
+  background-color: #686565;
+}
+.komentar-avtor {
+  margin-left:0.5em;
+  font-weight: 600;
+}
+.komentar-datum {
+  margin-left:1em;
+}

@@ -1,0 +1,4 @@
+## Directory-based project format:
+.idea/
+.idea
+/node_modules

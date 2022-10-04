@@ -1,0 +1,113 @@
+[
+    {
+    "naziv": "Gold Whey Protein Chocolate 2,3kg",
+    "cena": 49.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "whey",
+    "slika": "img/Gold_Whey_CHOCOLATE_1000_r.jpg"
+    },
+    {
+    "naziv": "Vegan chocko proteini 700g",
+    "cena": 24.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "vegan",
+    "slika": "img/vegan-choco_r.jpg"
+    },
+    {
+    "naziv": "Cellucor BCAA Sport Watermelon",
+    "cena": 29.99,
+    "ocena_strokovnjaka": 3,
+    "opis": "bcaa",
+    "slika": "img/bcaa.jpg"
+    },
+    {
+    "naziv": "Syntha-6 Whey proteini 2,26kg",
+    "cena": 34.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "whey",
+    "slika": "img/Syntha-6.jpg"
+    },
+    {
+    "naziv": "Light Digest Whey Protein 500g",
+    "cena": 14.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "whey",
+    "slika": "img/light-digest-whey-protein.jpg"
+    },
+    {
+    "naziv": "Scitec Whey Protein Isolate 2kg",
+    "cena": 59.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "whey",
+    "slika": "img/scitec-whey-protein-isolate.jpg"
+    },
+    {
+    "naziv": "Impact Whey Protein 1kg",
+    "cena": 19.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "whey",
+    "slika": "img/myprotein-impact-whey.jpg"
+    },
+    {
+    "naziv": "USN 100% Plant Proteini 900g",
+    "cena": 24.99,
+    "ocena_strokovnjaka": 3,
+    "opis": "vegan",
+    "slika": "img/usn-100-plant-proteini-900g.jpg"
+    },
+    {
+    "naziv": "USN Diet Fuel Vegan 889g",
+    "cena": 19.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "vegan",
+    "slika": "img/usn-diet-fuel-vegan.jpg"
+    },
+    {
+    "naziv": "Olimp Veggie Protein Complex 500g",
+    "cena": 24.99,
+    "ocena_strokovnjaka": 3,
+    "opis": "vegan",
+    "slika": "img/olimp-veggie-protein-complex-500g.jpg"
+    },
+    {
+    "naziv": "M NK DFC Tee SW Training",
+    "cena": 4.99,        "ocena_strokovnjaka": 5,
+    "opis": "mOblacila",
+    "slika": "img/nike-nk-dfc-tee.jpg"
+    },
+    {
+    "naziv": "UA PJT Rock Brahma Bull S",
+    "cena": 34.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "mOblacila",
+    "slika": "img/ua-pjt-rock-brahma-bull.jpg"
+    },
+    {
+    "naziv": "UA Knit Training Shorts",
+    "cena": 44.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "mOblacila",
+    "slika": "img/ua-knit-training-shorts.jpg"
+    },
+    {
+    "naziv": "Play Up Shorts 3.0",
+    "cena": 25.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "zOblacila",
+    "slika": "img/Under-Armour-play-up-short-3-0-15327390-0.jpg"
+    },
+    {
+    "naziv": "Live Sportstyle Graphic S",
+    "cena": 25.99,
+    "ocena_strokovnjaka": 5,
+    "opis": "zOblacila",
+    "slika": "img/Under-Armour-live-sportstyle-graphic-s-15570934-0.jpg"
+    },
+    {
+    "naziv": "Armour Sport Hi-Lo SS",
+    "cena": 34.99,
+    "ocena_strokovnjaka": 4,
+    "opis": "zOblacila",
+    "slika": "img/ua-armour-sport-hi-lo-ss.jpg"
+    }
+]

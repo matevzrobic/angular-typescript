@@ -1,0 +1,110 @@
+<body style="background-image: none;">
+	
+	<div id="sidebarProfil"> <!-- sidebar of profil -->
+		<ul class="col-12 col-sm-12 col-md-2 col-lg-2"style="margin-bottom: 0px;">
+			<li> <a href="#profil"> <h3>Profil</h3> </a> </li>
+			<li> <a href="#sprGesla">Sprememba Gesla</a>  </li>
+			<li> <a href="#zgoNakupov">Zgodovina Nakupov</a>  </li>
+			<li> <button onclick="odjava()"> Odjava </button> </li>
+			<li> <button id = "izbris"  onclick="zbrisiRacun()"> Izbriši račun </button> </li>
+		</ul>
+	</div>
+	
+	
+	<div id="profil" class="content col-12 col-sm-12 col-md-10 col-md-10"><!-- profil -->
+		<index> > profil </index> 
+		<form id="updateInfo">
+			<div class="form-group">
+				<label for="ime"><strong>Ime:</strong></label>
+				<input name="ime" type="text" class="form-control col-md-6" id="ime" placeholder="{{uporabnik.ime}}">
+			</div>
+			
+			<div class="form-group">
+				<label for="priimek"><strong>Priimek:</strong></label>
+				<input name="priimek" type="text" class="form-control col-md-6" id="priimek" placeholder="{{uporabnik.priimek}}">
+			</div>
+			
+			<div class="form-group">
+				<label for="email"><strong>Elektronski naslov:</strong></label>
+				<input name="email" type="email" class="form-control col-md-6" id="email" placeholder="{{uporabnik.email}}" name="email">
+			</div>
+			
+			<div class="form-group">
+				<label for="datumrojstva"><strong>Datum rojstva:</strong></label>
+				<input name="datumRojstva" type="date" class="form-control col-md-6" id="datumRojstva" value="{{uporabnik.datumRojstva}}">
+			</div>
+			
+			<br>
+
+			<input id="updateInfoButton" type="submit" class="btn btn-outline-dark" value="Shrani">
+		</form>
+	</div>
+	
+	<div id="sprGesla" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Sprememba gesla -->
+		<index> > spremeni geslo </index>
+		<form id="updateGeslo">
+			
+			<div class="form-group">
+				<label for="geslo"><strong>Staro geslo:</strong></label>
+				<input type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="staroGeslo">
+			</div>
+			
+			<div class="form-group">
+				<label for="geslo"><strong>Novo geslo:</strong></label>
+				<input type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="novoGeslo">
+			</div>
+			<div class="form-group">
+				<label for="geslo"><strong>Potrdi novo geslo:</strong></label>
+				<input type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="ponoviGeslo">
+			</div>
+			
+			<button id="updateGesloButton" type="submit" class="btn btn-outline-dark"> Spremeni </button>
+		</form>
+	</div>
+	
+	<div id="zgoNakupov" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Zgodovina nakupov -->
+		<index> > zgodovina nakupov </index>
+		<!--div class="nakup container-fluid">
+			<div class="row">
+				<div class="col-3 col-md-2"> #1304873301 </div>
+				<div class="col-3 col-md-7 col-lg-8"> 12.7.2020 </div>
+				
+				<div class="offset-1 col-2 offset-md-0 col-md-1"> 25% </div>
+				<div class="col-3 col-md-2 col-lg-1"><strong> 19.49€ </strong></div>
+			</div>
+			<div class="row">
+				<div class="col-6"></div>
+				<div class="col-1"> <i class="fas fa-sort"></i> </div>
+				<div class="col-5"></div>
+			</div>
+		</div-->
+		
+		{{#each nakupi as |nakup|}}
+			<div id={{nakup._id}} class="nakup container-fluid">
+				<div class="row">
+					<div class="col-2 col-md-2"> {{trimString nakup.datum}} </div>
+					
+					<table class="offset-1 offset-md-0 col-10 col-md-5">
+						{{#each nakup.izdelki as |izdelek|}}
+						<tr> <td> {{izdelek.naziv}} </td> <td> {{izdelek.cena}}€ </td> </tr>
+						<!--tr> <td> Vitamin C plus, 180 tablet </td> <td> 19.99€ </td> </tr>
+						<tr> <td> Vegan Protein Blend, 1000g </td> <td> 20.99€ </td> </tr-->
+						{{/each}}
+					</table>
+				</div>
+				<div class="row justify-content-end">
+					<div class="col-2 col-sm-1 col-md-1"> {{nakup.kupon.popust}}% </div>
+					<div class="col-3 col-md-2 col-lg-1"><strong> {{nakup.skupnaCena}}€ </strong></div>
+				</div>
+				<div class="row">
+					<div class="col-6"></div>
+					<div class="col-1"> <i class="fas fa-sort"></i> </div>
+					<div class="col-5"></div>
+				</div>
+			</div>
+		{{/each}}
+		
+		
+		<button id="more" type="submit" class="btn btn-outline-dark"> Pokaži več </button>
+	</div>
+</body>

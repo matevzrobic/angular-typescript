@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dodajanje izdelka</title>
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/izdelki.css">
+    </head>
+    <body style="background-image: none;">
+
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="Beljakovine.si/public/img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="izdelki.html">Izdelki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kategorije
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Whey proteini</a>
+                        <a class="dropdown-item" href="#">Veganski proteini</a>
+                        <a class="dropdown-item" href="#">Bcaa</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                        <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                    </ul>
+                    
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                        <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                        <div id="login_gumb" class="login_popup">
+                            <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                        </div>
+                    </div>  
+                </div>
+            </nav>
+        </div>
+        <br>
+
+        <h2 class="d-flex justify-content-center">Dodajanje izdelka</h2>
+        <br>
+
+        <form class="center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input placeholder="Ime izdelka" class="lg-field" type="text">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input placeholder="Cena izdelka [€]" class="sm-field" type="text">
+                </div>
+                <div class="col-sm-6">
+                    <select class="sm-field" style="height: 30px;" name="kategorija" id="kategorija">
+                        <option value="" disabled selected>Izberi kategorijo</option>
+                        <option value="whey-proteini">Whey proteini</option>
+                        <option value="veganski-proteini">Veganski proteini</option>
+                        <option value="aminokisline">Aminokisline</option>
+                        <option value="moska-oblacila">Moška oblačila</option>
+                        <option value="zenska-oblacila">Ženska oblačila</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Opis</label>
+                <textarea class="form-control lg-field" id="opis" rows="3"></textarea>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <label>Mnenje strokovnjaka</label>
+                    <select style="border: 1px solid rgb(238, 143, 1)">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <br>
+                <label>Dodaj sliko</label>
+                <br>
+                <input type="file" name="slika-izdelka" id="slika-izdelka accept="image/*"">
+            </div>
+            <br>
+            <div style="text-align:center" class="center">
+                    <a href="index.html"><button class="button">Dodaj izdelek</button></a>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="sl">
+    <head>
+        <title>Potrditev nakupa</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/checkout.js"></script>
+        <link href="css/checkout1.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="main" class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="izdelki.html">Izdelki</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kategorije
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Whey proteini</a>
+                                <a class="dropdown-item" href="#">Veganski proteini</a>
+                                <a class="dropdown-item" href="#">Bcaa</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                                <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                        <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                        <div id="login_gumb" class="login_popup">
+                            <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Progress bar -->
+            <div class="col-12 col-md-12 col-lg-12">
+                <div id="bar" class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 33.3%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><strong>Izbor izdelkov</strong></div>
+                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 33.3%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><strong>Potrditev nakupa</strong></div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Dostava in plačilo</div>
+                </div>
+            </div>
+            <!-- Izdelki -->
+            <div id="izdelki" class="container">
+                <table class="table">
+                    <!-- Naslovi -->
+                    <thread>
+                        <tr>
+                            <th>Izdelek</th>
+                            <th>Količina</th>
+                            <th>Cena</th>
+                        </tr>
+                    </thread>
+                    <!-- Prva vrstica -->
+                    <tbody>
+                    <tr>
+                        <td><img class="slika-izdelek" src="img/Gold Whey-CHOCOLATE 1000_r.jpg"> <p>Gold Whey Protein Chocolate 2,3kg</p></td>
+                        <td>
+                            <div class="form-group">
+                                <input type="number" class="form-control" value="1" id="stIzdelkov1" min="0" oninput="izracunSkupneCene()">
+                            </div>
+                        </td>
+                        <td><span id="cena1"> 49.99 € </span></td>
+                    </tr>
+                    <!-- Druga vrstica -->
+                    <tr>
+                        <td><img class="slika-izdelek" src="img/vegan-choco_r.jpg">Vegan chocko proteini 700g</td>
+                        <td>
+                            <div class="form-group">
+                                <input type="number" class="form-control" value="1" id="stIzdelkov2" min="0" oninput="izracunSkupneCene()">
+                            </div>
+                        </td>
+                        <td><span id="cena2"> 24.99 € </span></td>
+                    </tr>
+                    <!-- Tretja vrstica -->
+                    <tr>
+                        <td><strong>Skupaj:</strong></td>
+                        <td></td>
+                        <td><span id="cenaSkupaj"> 74.98 € </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Unovčitev kupona -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div id="kupon" class="input-group mb-3">
+                    <input type="text" id="kuponn" class="form-control" placeholder="Unovčite kodo za popust" aria-label="kupon" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary">Potrdi</button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 6%">
+                <div class="row m-0">
+                    <button type="button" id="nazaj"class="btn btn-outline-secondary">Nazaj</button>
+                    <a id="naprej" class="btn btn-outline-success" href="checkout2.html" role="button">Na naslednji korak</a>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<body style="background-image: none;">
+    <br>
+    <form method="POST" action="" id="form" class="center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="d-flex justify-content-center">{{title}}</h2>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="d-flex justify-content-center" style="font-size: 12px" for="fname"><b>{{label.ena}}</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input name="ime" id="fname" class="inputOkna" placeholder="Vnesi ime" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="d-flex justify-content-center" style="font-size: 12px" for="lname"><b>{{label.dva}}</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input name="priimek" id="lname" class="inputOkna" placeholder="Vnesi priimek" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="d-flex justify-content-center" style="font-size: 12px" for="email"><b>{{label.tri}}</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input name="email" id="email" class="inputOkna" placeholder="Vnesi e-mail" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="psw"><b>{{label.stiri}}</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input name="geslo" type="password" id="psw" class="inputOkna" placeholder="Vnesi geslo" required>
+                    </div>
+
+                    
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                                <label class="d-flex justify-content-center" style="font-size: 12px" for="psw"><b>{{label.pet}}</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input name="geslo2" type="password" id="psw-validation" class="inputOkna" placeholder="Vnesi geslo" required>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div style="text-align:center;" class="row">
+                <div class="col-md-12">
+                    <label style="color: black; font-size: 12px" for="pogoji">
+                        Prebral sem <a href="/pogoji">pogoje uporabe</a> in se z njimi strinjam.
+                    </label>
+                    <input type="checkbox" id="pogoji" name="pogoji" value="pogoji" required>
+                </div>
+                <div class="col-md-12">
+                    <label style="color: black; font-size: 12px" for="akcija">
+                        Strinjam se, da me obveščate o aktualni ponudbi
+                        in akcijah.
+                    </label>
+                    <input type="checkbox" id="akcija" name="akcija" value="Obvescanje">
+                </div>
+            </div>
+
+            <br>
+
+            <div id="napakaIme" style="display: none; text-align: center" class="alert alert-danger" role="alert" >
+                {{err.ime}}
+            </div>
+            <div id="napakaPriimek" style="display: none; text-align: center" class="alert alert-danger" role="alert" >
+                {{err.priimek}}
+            </div>
+            <div id="napakaEmail" style="display: none; text-align: center" class="alert alert-danger" role="alert" >
+                {{err.email}}
+            </div>
+            <div id="napakaGeslo" style="display: none; text-align: center" class="alert alert-danger" role="alert" >
+                {{err.geslo}}
+            </div>
+            <div id="napakaValidation" style="display: none; text-align: center" class="alert alert-danger" role="alert" >
+                {{err.validation}}
+            </div>
+
+            <br>
+
+            <div style="text-align:center" class="center">
+                <button type="submit" class="button">Registracija</button>
+            </div>
+    </form>
+</body>

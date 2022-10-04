@@ -1,0 +1,45 @@
+<body style="background-image: none;">
+    <div *ngIf="sporociloWait;else other_content">
+        <div class="alert alert-warning col-11">{{sporociloWait}}</div>
+    </div>
+    <ng-template #other_content>
+        <div class="row">
+            <div class="col-lg-5 col-xl-4 col-md-6 mb-4">
+                <img  id="slika" src="../../../assets/{{izdelek.slika}}" class="slika-izdelek">
+            </div>
+    
+            <div class="col-lg-7 col-xl-8 col-md-6 mb-4">
+                <h2 id="naziv">{{izdelek.naziv}}</h2>
+                <hr>
+                <h1 id="cena" style="display: inline;">{{izdelek.cena | currency}}</h1>
+                <br>  
+                <button style="text-align:center" class="button" (click)="dodajVKosarico()">
+                    Dodaj v košarico
+                </button>
+                <p class="rating" [innerHTML]="izdelek.ocena_strokovnjaka | zvezdice"></p>
+                <div id="ocenaIme" style="display: none;">Ocena:</div><div id="ocena" style="display: none;">{{izdelek.ocena_strokovnjaka}}</div>
+                <hr>
+                <h3>Opis:</h3>
+                <p id="opis">{{izdelek.opis}}</p>
+                <hr>
+                <div class="row mt-3"></div>
+            </div>
+            <a routerLink="/izdelki" *ngIf="adminB">
+            <button style="text-align:center" [disabled]="!jePovezava()" class="button" (click)="odstraniIzdelek(izdelek)" id="brisanjeIzdelka">
+                Izbriši izdelek
+            </button>
+            </a>
+            <a><button style="text-align:center" onclick="zacniUrejanje()" [disabled]="!jePovezava()" class="button" *ngIf="adminB">
+                Uredi izdelek
+            </button></a>
+            <a id="preusmeriPosodabljaj" *ngIf="adminB">
+            <button style="text-align:center;" class="button" id="potrdiUrejanje" [disabled]="!jePovezava()" (click)="posodobiIzdelek()" id="urejanjeIzdelka">
+                Potrdi urejanje
+            </button>
+            </a>
+            <div *ngIf="sporocilo">
+                <div class="alert alert-warning col-11">{{sporocilo}}</div>
+            </div>
+        </div>
+    </ng-template>
+</body>

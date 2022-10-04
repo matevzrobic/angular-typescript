@@ -1,0 +1,57 @@
+<body style="background-image: none;">
+    <br>
+    <h2 class="d-flex justify-content-center">Dodaj Izdelek</h2>
+    <br>
+    <form class="center" method="post">
+        <div class="row">
+            <div class="col-sm-12">
+                <input [(ngModel)]="novIzdelek.naziv" placeholder="Ime izdelka" class="lg-field" type="text" name="naziv">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <input [(ngModel)]="novIzdelek.cena" placeholder="Cena izdelka [€]" class="sm-field" type="text" name="cena">
+            </div>
+            <div class="col-sm-6">
+                <select [(ngModel)]="novIzdelek.slika" class="sm-field" style="height: 30px;" name="slika" id="slika">
+                    <option  value="img\Gold_Whey_CHOCOLATE_1000_r.jpg">Whey</option>
+                    <option value="img\vegan-choco_r.jpg">Vegan</option>
+                    <option value="img\bcaa.jpg">BCAA</option>
+                    <option value="img\ua-pjt-rock-brahma-bull.jpg">Moška majica</option>
+                    <option value="img\ua-armour-sport-hi-lo-ss.jpg">Ženska majica</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Opis</label>
+            <textarea [(ngModel)]="novIzdelek.opis" class="form-control lg-field" id="opis" rows="3" name="opis"></textarea>
+        </div>
+        <br>
+        <div>
+            <div>
+                <label>Mnenje strokovnjaka</label>
+                <select [(ngModel)]="novIzdelek.ocena_strokovnjaka" style="border: 1px solid rgb(238, 143, 1)" name="ocena">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center" class="center">
+            <input [disabled]="!jePovezava()" (click)="soPodatkiUstrezniIzdelki()" type="submit" class="button" value="Preveri podatke">
+        </div>
+        <div *ngIf="sporocilo;else other_content">
+            <div class="alert alert-warning col-11">{{sporocilo}}</div>
+        </div>
+        <ng-template #other_content>
+            <div style="text-align:center" class="center">
+                <input routerLink="/izdelki" [disabled]="!jePovezava()" (click)="dodajIzdelek()" type="submit" class="button" value="Dodaj izdelek">
+            </div>
+        </ng-template>
+    </form>
+</body>

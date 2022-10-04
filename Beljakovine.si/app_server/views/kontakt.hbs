@@ -1,0 +1,77 @@
+<div class="row">
+    <form class="col-12 col-md-4" id="poslji_sporocilo" action="mailto:martin.burton588@gmail.com" enctype="text/plain" style="position: relative;left: 50px">
+        <br>
+        <p><strong>Sporočilo za administratorja</strong></p>
+        <div class="form-group">
+            <label>Ime</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_name">Nepravilno vnešeno ime!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="text" name="ime" placeholder="Ime">
+        </div>
+        <div class="form-group">
+            <label>Priimek</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_lname">Nepravilno vnešen priimek!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="text" name="priimek" placeholder="Priimek">
+        </div>
+        <div class="form-group">
+            <label>Email</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_email">Nepravilno vnešen email!</div>
+            <input class="form-control col-10 col-md-12 form-control-sm" type="email" id="email" name="email" placeholder="nekdo@domena">
+        </div>
+        <div class="form-group">
+            <label>Sporočilo</label><div class="napacno_vneseni_podatki alert alert-danger" id="error_msg">Prosim vnesite sporočila(ne more biti prazno)!</div>
+            <textarea class="form-control col-10 col-md-12 form-control-sm" name="msg" rows="4" name="sporocilo"></textarea>
+        </div>
+        <br>
+        <p>
+            <input type="submit" class="btn btn-primary btn-sm" id="poslji_podatke1" value="Pošlji podatke">
+            <input type="reset" value="Zbriši podatke" class="btn btn-secondary btn-sm">
+        </p>
+    </form>        
+    <div class="col-12 offset-0 col-md-7 offset-md-1">
+        {{#if sporocilo}}
+            <div class="alert alert-warning col-11">{{sporocilo}}</div>
+        {{else}}
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered" style="width: 90%; margin: 30px">
+            <tr>
+                <th>Ime trgovine</th>
+                <th>Lokacija</th>
+                <th>Možen prevzem</th>
+                <th></th>
+            </tr>
+            {{#each trgovine as |trgovina|}}
+            <tr>
+                <td><div class="trgovina" data-lng={{trgovina.lng}} data-lat={{trgovina.lat}}>{{trgovina.ime}}</div></td>
+                <td>{{trgovina.lokacija}}</td>
+                <td >{{trgovina.prevzem}}</td>
+                <td><button data-id={{trgovina._id}} onclick="posljiDelete(this)" class="btn btn-danger">-</button>
+                    </td>
+            </tr>
+            {{/each}}
+        </table>
+        </div>
+        {{/if}}
+        <button type="button" onclick="dodajTabelo()" class="btn btn-dark float-right" style=" margin: 30px;margin-right: 70px">+</button>
+        <div class="alert alert-danger" style="display:none;" id="popraviPoljeVnosa">Popravite polja vnosa.</div>
+        <table class="table table-striped table-responsive" style="width: 90%; margin: 30px; display:none" id="dodajTabelo">
+            <tr>
+                <th>Ime trgovine</th>
+                <th>Lokacija</th>
+                <th>Možen prevzem</th>
+                <th>Koordinata(lng)</th>
+                <th>Koordinata(lat)</th>
+            </tr>
+            <form method="post" action="" id="dodajTrgovino">
+            <tr>
+                <td><input type="text" name="ime" class="form-control form-control-sm"></td>
+                <td><input type="text" name="lokacija" class="form-control form-control-sm"></td>
+                <td><input type="da/ne" name="prevzem" class="form-control form-control-sm"></td>
+                <td><input type="text"  name="lng" class="form-control form-control-sm"></td>
+                <td><input type="text" name="lat" class="form-control form-group  form-control-sm"><input  type="submit" class="btn btn-success" value="dodaj"></td>
+            </tr>
+            </form>
+        </table>
+        <datalist id="da/ne">
+            <option value="DA"></option>
+            <option value="NE"></option>
+        </datalist>
+        <div id="mapa_id"></div>
+    </div>
+</div>

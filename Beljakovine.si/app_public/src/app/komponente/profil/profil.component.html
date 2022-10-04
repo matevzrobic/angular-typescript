@@ -1,0 +1,95 @@
+<div id="sidebarProfil"> <!-- sidebar of profil -->
+	<ul class="col-12 col-sm-12 col-md-2 col-lg-2"style="margin-bottom: 0px;">
+		<li> <a href="profil#profil"> <h3>Profil</h3> </a> </li>
+		<li> <a href="profil#sprGesla">Sprememba Gesla</a>  </li>
+		<li> <a href="profil#zgoNakupov">Zgodovina Nakupov</a>  </li>
+		<li> <button id="odjava" (click)="odjava()"> Odjava </button> </li>
+		<li> <button id = "izbris" [disabled]="!jePovezava()" (click)="zbrisiRacun()"> Izbriši račun </button> </li>
+	</ul>
+</div>
+
+<div *ngIf="obrazecUspesno" class="alert alert-success col-5" role="alert" >
+	<a href="#" (click)="obrazecUspesno=''" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{obrazecUspesno}}
+</div>
+
+<div *ngIf="obrazecNapaka" class="alert alert-danger col-5" role="alert" >
+	<a href="#" (click)="obrazecNapaka=''" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{obrazecNapaka}}
+</div>
+
+<div id="profil" class="content col-12 col-sm-12 col-md-10 col-md-10"><!-- profil -->
+	<p> > profil </p>
+	<form *ngIf="uporabnik" (ngSubmit)="posodobiUporabnika()" id="updateInfo">
+		<div class="form-group">
+			<label for="ime"><strong>Ime:</strong></label>
+			<input [(ngModel)]="novi.ime" name="ime" type="text" class="form-control col-md-6" id="ime">
+		</div>
+
+		<div class="form-group">
+			<label for="priimek"><strong>Priimek:</strong></label>
+			<input [(ngModel)]="novi.priimek" name="priimek" type="text" class="form-control col-md-6" id="priimek">
+		</div>
+
+		<div class="form-group">
+			<label for="email"><strong>Elektronski naslov:</strong></label>
+			<input [(ngModel)]="novi.email" name="email" type="email" class="form-control col-md-6" id="email" >
+		</div>
+
+		<!--div class="form-group">
+			<label for="datumrojstva"><strong>Datum rojstva:</strong></label>
+			<input [(ngModel)]="uporabnik.datumR" name="datumRojstva" type="date" class="form-control col-md-6" id="datumRojstva" value="{{uporabnik.datumRojstva}}">
+		</div-->
+
+		<br>
+
+		<input [disabled]="!jePovezava()" id="updateInfoButton" type="submit" class="btn btn-outline-dark" value="Shrani">
+	</form>
+</div>
+
+<div id="sprGesla" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Sprememba gesla -->
+	<p> > spremeni geslo </p>
+	<form (ngSubmit)="posodobiGeslo()" id="updateGeslo">
+
+		<div class="form-group">
+			<label for="geslo"><strong>Staro geslo:</strong></label>
+			<input [(ngModel)]="G.staroGeslo" type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="staroGeslo">
+		</div>
+
+		<div class="form-group">
+			<label for="geslo"><strong>Novo geslo:</strong></label>
+			<input [(ngModel)]="G.novoGeslo" type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="novoGeslo">
+		</div>
+		<div class="form-group">
+			<label for="geslo"><strong>Potrdi novo geslo:</strong></label>
+			<input [(ngModel)]="G.ponoviGeslo" type="password" class="form-control col-md-6" placeholder="Vnesi geslo" name="ponoviGeslo">
+		</div>
+
+		<button [disabled]="!jePovezava()" id="updateGesloButton" type="submit" class="btn btn-outline-dark"> Spremeni </button>
+	</form>
+</div>
+
+<div id="zgoNakupov" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Zgodovina nakupov -->
+	<p> > zgodovina nakupov </p>
+
+	<div *ngFor="let nakup of nakupi" id={{nakup._id}} (contextmenu)="zbrisiNakup(nakup)" class="nakup container-fluid">
+		<div class="row">
+			<div class="col-2 col-md-2"> {{nakup.datum | datumPipe: 10}} </div>
+
+			<table class="offset-1 offset-md-0 col-10 col-md-5">
+				<tr *ngFor="let izdelek of nakup.izdelki"> <td> {{izdelek.naziv}} </td> <td> {{izdelek.cena}}€ </td> </tr>
+			</table>
+		</div>
+		<div class="row justify-content-end">
+			<div *ngIf="nakup.kupon" class="col-2 col-sm-1 col-md-1"> {{nakup.kupon.popust}}% </div>
+			<div class="col-3 col-md-2 col-lg-1"><strong> {{nakup.skupnaCena | decimalke:2 | currency}} </strong></div>
+		</div>
+		<div class="row">
+			<div class="col-6"></div>
+			<div class="col-1"> <i class="fas fa-sort"></i> </div>
+			<div class="col-5"></div>
+		</div>
+	</div>
+
+	<!--button id="more" type="submit" class="btn btn-outline-dark"> Pokaži več </button-->
+</div>

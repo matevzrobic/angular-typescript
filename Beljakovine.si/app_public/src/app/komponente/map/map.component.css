@@ -1,0 +1,11 @@
+#mapa_id{
+    position: relative;
+    height: 500px;
+    width: 90%;
+    border-radius: 5px;
+    margin: 30px;
+    border:outset orange;
+    -webkit-box-shadow: 0px 2px 97px -2px rgba(0,0,0,0.77);
+    -moz-box-shadow: 0px 2px 97px -2px rgba(0,0,0,0.77);
+    box-shadow: 0px 2px 97px -2px rgba(0,0,0,0.77);
+  }

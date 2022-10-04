@@ -1,0 +1,191 @@
+{
+  "configVersion": 1,
+  "timestamp": 1609725750374,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.26f147d796d59f592b8a.js",
+        "/manifest.webmanifest",
+        "/polyfills.8c151b8375e767ff858f.js",
+        "/runtime.0e49e2b53282f40c8925.js",
+        "/styles.3ff695c00d717f2d2a11.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/img/Gold_Whey_CHOCOLATE_1000_r.jpg",
+        "/assets/img/Syntha-6.jpg",
+        "/assets/img/Under-Armour-live-sportstyle-graphic-s-15570934-0.jpg",
+        "/assets/img/Under-Armour-play-up-short-3-0-15327390-0.jpg",
+        "/assets/img/background.jpg",
+        "/assets/img/bcaa.jpg",
+        "/assets/img/happy.jpg",
+        "/assets/img/light-digest-whey-protein.jpg",
+        "/assets/img/logo_3.png",
+        "/assets/img/men_clothes.jpg",
+        "/assets/img/myprotein-impact-whey.jpg",
+        "/assets/img/nike-nk-dfc-tee.jpg",
+        "/assets/img/olimp-veggie-protein-complex-500g.jpg",
+        "/assets/img/plus.jpg",
+        "/assets/img/protein_shake.jpg",
+        "/assets/img/protein_shake1.jpg",
+        "/assets/img/scitec-whey-protein-isolate.jpg",
+        "/assets/img/ua-armour-sport-hi-lo-ss.jpg",
+        "/assets/img/ua-knit-training-shorts.jpg",
+        "/assets/img/ua-pjt-rock-brahma-bull.jpg",
+        "/assets/img/usn-100-plant-proteini-900g.jpg",
+        "/assets/img/usn-diet-fuel-vegan.jpg",
+        "/assets/img/vegan-choco_r.jpg",
+        "/assets/img/women_closthes.jpeg",
+        "/assets/javascripts/bootstrap.min.js",
+        "/assets/javascripts/bootstrap.min.js.map",
+        "/assets/javascripts/izdelki.js",
+        "/assets/javascripts/jquery-3.5.1.min.js",
+        "/assets/javascripts/jquery-3.5.1.min.map",
+        "/assets/javascripts/kalkulator.js",
+        "/assets/javascripts/kosarica.js",
+        "/assets/javascripts/kuponi.js",
+        "/assets/javascripts/podatki.json",
+        "/assets/javascripts/popper.min.js",
+        "/assets/javascripts/popper.min.js.map",
+        "/assets/javascripts/prijava.js",
+        "/assets/javascripts/registracija.js",
+        "/assets/javascripts/script.js",
+        "/assets/stylesheets/bootstrap.min.css",
+        "/assets/stylesheets/bootstrap.min.css.map",
+        "/assets/stylesheets/izdelki.css",
+        "/assets/stylesheets/kalkulator.css",
+        "/assets/stylesheets/kosarica.css",
+        "/assets/stylesheets/login.css",
+        "/assets/stylesheets/main.css",
+        "/assets/stylesheets/profil.css",
+        "/assets/stylesheets/style.css"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "beljakovine-api",
+      "patterns": [
+        "http:\\/\\/localhost:3000\\/.*",
+        "https:\\/\\/beljakovine\\.herokuapp\\.com\\/api\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 3600000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/img/Gold_Whey_CHOCOLATE_1000_r.jpg": "4bef0637f89b485e8f49d9f60922517b3c904d94",
+    "/assets/img/Syntha-6.jpg": "6b8c0d483a52d4cdcaed1da3842c10d655a3b130",
+    "/assets/img/Under-Armour-live-sportstyle-graphic-s-15570934-0.jpg": "3681842f89f0823fbcd6ed33076eddd3bf24b1e6",
+    "/assets/img/Under-Armour-play-up-short-3-0-15327390-0.jpg": "262572aa3fedb875bb10f7edd9e8af0ffe7d361c",
+    "/assets/img/background.jpg": "57d72b7a466ff49efe614e9c771990e2f72df2d4",
+    "/assets/img/bcaa.jpg": "f01b952402218ab54c171433f9e5f068fe3087a7",
+    "/assets/img/happy.jpg": "cf87993b923a1f07f36dd7fa95793090bdcaf4b8",
+    "/assets/img/light-digest-whey-protein.jpg": "ac3164c52799ca604485aa5c6d3ab31e3e920c7a",
+    "/assets/img/logo_3.png": "e748edde0b53fd719d44f00ea0806868f97cd022",
+    "/assets/img/men_clothes.jpg": "3c8834e582adf23884375d354e11c3409007238f",
+    "/assets/img/myprotein-impact-whey.jpg": "fd5a1dc5c23349e4db883626d2c65a95083e7e8b",
+    "/assets/img/nike-nk-dfc-tee.jpg": "e35acf2b26bc6fa8e5310218859cec05995c7a13",
+    "/assets/img/olimp-veggie-protein-complex-500g.jpg": "63218b9b4861b1c008985e636f1ae4b7de4473c9",
+    "/assets/img/plus.jpg": "29ec624d70ef75b9965eeef94578b5de2047209f",
+    "/assets/img/protein_shake.jpg": "1e27989526a703ec40d31b413daf9854207ad794",
+    "/assets/img/protein_shake1.jpg": "65282f3195f6cef84e4ae59fbdf97dc9fb66f957",
+    "/assets/img/scitec-whey-protein-isolate.jpg": "32c55cca41c579a6fbe1e45e86ffea13b1d81456",
+    "/assets/img/ua-armour-sport-hi-lo-ss.jpg": "f969f69fe12d112a61e778a23ca84f1127190a1c",
+    "/assets/img/ua-knit-training-shorts.jpg": "8b9c56d296537c6398de750381aee0df85f4e4c3",
+    "/assets/img/ua-pjt-rock-brahma-bull.jpg": "3bb57b02bd5e8cfc7881ec03838a14e2b7da14b5",
+    "/assets/img/usn-100-plant-proteini-900g.jpg": "6e43078823e3ea8cf153529237f5c17d185131ce",
+    "/assets/img/usn-diet-fuel-vegan.jpg": "20de8c44b4e127a2edcb4cd20a4f864028e73d43",
+    "/assets/img/vegan-choco_r.jpg": "1fc3f4319cfbe9fc7662cd5949d8b5bfd686168d",
+    "/assets/img/women_closthes.jpeg": "e85466bde3333c648ce5eb3741cae56c57dd817a",
+    "/assets/javascripts/bootstrap.min.js": "6778fed3cf095a318141a31f455c8f4663885bde",
+    "/assets/javascripts/bootstrap.min.js.map": "d64a289f698e446b0cc78e83dd0161bb8e2f2075",
+    "/assets/javascripts/izdelki.js": "c9384ad667969095de7b78846696b29d2a2ce8cc",
+    "/assets/javascripts/jquery-3.5.1.min.js": "c8e1c8b386dc5b7a9184c763c88d19a346eb3342",
+    "/assets/javascripts/jquery-3.5.1.min.map": "6207ad2639a863210f202384044a575c69a678ac",
+    "/assets/javascripts/kalkulator.js": "48e7d6b556ef7ec9b3550157b1b27918e60649e1",
+    "/assets/javascripts/kosarica.js": "cc1a88938d797d5d869c295714dbb95cde3e18b7",
+    "/assets/javascripts/kuponi.js": "8df12a4900ef117a06b60dac93dc2a9da04f4400",
+    "/assets/javascripts/podatki.json": "1474976aee1aa53dc1e1faddc622309d4ef5f826",
+    "/assets/javascripts/popper.min.js": "23736340a0a40c8ae976e9c7335ffa4ea8c49859",
+    "/assets/javascripts/popper.min.js.map": "a4c82eb2a1d55834a318905c174d2fe375c3fed9",
+    "/assets/javascripts/prijava.js": "ab976852e9747fa1b3eddc5fd7b5390b45a7ab9e",
+    "/assets/javascripts/registracija.js": "ccb8e37b4dc1535f32a3e8bc9b3624f4ac715476",
+    "/assets/javascripts/script.js": "40a98b019afe2ac9832157111137e4917520a662",
+    "/assets/stylesheets/bootstrap.min.css": "b55c19f97a94916abb763cc7d0b93f10948728a8",
+    "/assets/stylesheets/bootstrap.min.css.map": "138e3afc4b69b3cdda870e628d56a8dc8c6f4d36",
+    "/assets/stylesheets/izdelki.css": "794340e3ec2e85db0cabd50670853b0f5823aa04",
+    "/assets/stylesheets/kalkulator.css": "881f0eaca4882bb2395e172337cc61501dc7b8ab",
+    "/assets/stylesheets/kosarica.css": "0586fd34e0e8b00f6132c178ac7ae5a16d5f8c85",
+    "/assets/stylesheets/login.css": "b293c97dd6af1e1ddf429b63d234cb874309e064",
+    "/assets/stylesheets/main.css": "f5077d162a7598a2928fc55e35bdc73035955833",
+    "/assets/stylesheets/profil.css": "bf9000318a72de1cb8055f761a939834b6176920",
+    "/assets/stylesheets/style.css": "d06894f54978f77df017101fe3e81ab9449c2639",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "d6cb7d31c554e007e8d2bf21b0ff718a02398e06",
+    "/main.26f147d796d59f592b8a.js": "64440bdcee719a88f03fc8c3c8b3353c9fec7d4d",
+    "/manifest.webmanifest": "41c7e41ff94b369e833dbb078e078be3072c7d91",
+    "/polyfills.8c151b8375e767ff858f.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
+    "/runtime.0e49e2b53282f40c8925.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.3ff695c00d717f2d2a11.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

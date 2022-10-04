@@ -1,0 +1,84 @@
+
+    <br>
+    <body style="background-image: none;">
+        <form method="GET" action="/prijava/i" id="form" class="center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="d-flex justify-content-center">{{title}}</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="email"><b>{{label.ena}}</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input name="email" class="inputOkna" placeholder="Vnesi e-mail" id="email" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                                <label class="d-flex justify-content-center" style="font-size: 12px" for="psw"><b>{{label.dva}}</b></label>
+                        </div>
+                        <div style="text-align:center" class="col-md-12">
+                            <input name="geslo" class="inputOkna" type="password" placeholder="Vnesi geslo" id="psw" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align:center;" class="row">
+                        <div class="col-md-12">
+                            <a style="color: black; font-size: 12px" href="/registracija">Še niste registrirani?</a>
+                        </div>
+                        <div class="col-md-12">
+                            <a id="forgotPsw" style="color: black; font-size: 12px" href="#">Pozabljeno geslo?</a>
+                        </div>
+                </div>
+                <br>
+
+                {{#if sporocilo}}
+                <div class="alert alert-danger" role="alert" >
+                    {{sporocilo}}
+                </div>
+                {{/if}}
+            
+                <div id="napaka" style="display: none" class="alert alert-danger" role="alert" >
+                    {{err}}
+                </div>
+        
+                <div style="text-align:center" class="center">
+                    <button type="submit" class="button">Prijava</button>
+                </div>
+        </form>
+
+        
+
+        <div class="popup">
+            <div class="popup-content">
+                <h2 style="text-align: center">Pozabljeno geslo</h2>
+                <p style="text-align: center">Spodaj vnesite svoj e-mail naslov.</p>
+                <input class="inputOkna" type="email" placeholder="E-mail naslov" name="email" required>
+                <i class="fa fa-envelope-o" style="font-size:24px; margin-left: 2em;"></i>
+                <br>
+                <hr>
+                <pstyle="text-align: center">Sledite navodilom, ki Vam jih bomo poslali na e-mail.</p>
+                <a href="">
+                    <button style="text-align:center" class="button">
+                        Pošlji
+                    </button>
+
+                    <button style="text-align:center" class="button" alt="Close" class="close">
+                        Zapri
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("forgotPsw").addEventListener("click", function() {
+                document.querySelector(".popup").style.display = "flex";
+            })
+        </script>
+    </body>

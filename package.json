@@ -1,0 +1,22 @@
+{
+  "name": "beljakovine.si",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.8"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "hbs": "*",
+    "mail": "^0.2.3",
+    "morgan": "*",
+    "serve-favicon": "*"
+  }
+}

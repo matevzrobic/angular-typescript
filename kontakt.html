@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="sl">
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Kontakt</title>
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        
+    </head>
+    <body>
+        <div class="container-fluid">       
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="izdelki.html">Izdelki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                      </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kategorije
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Whey proteini</a>
+                        <a class="dropdown-item" href="#">Veganski proteini</a>
+                        <a class="dropdown-item" href="#">Bcaa</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                        <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                  </ul>
+                  
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                    <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                    <div id="login_gumb" class="login_popup">
+                      <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                    </div>
+                    </div>  
+                </div>
+              </nav>
+                <div class="row">
+                    <form class="col-12 col-md-4" id="poslji_sporocilo" style="position: relative;left: 50px">
+                        <br>
+                        <p><strong>Sporočilo za administratorja</strong></p>
+                        <div class="form-group">
+                            <label>Ime</label>
+                            <input class="form-control col-10 col-md-12 form-control-sm" type="text" name="ime" placeholder="Ime">
+                        </div>
+                        <div class="form-group">
+                            <label>Priimek</label>
+                            <input class="form-control col-10 col-md-12 form-control-sm" type="text" name="priimek" placeholder="Priimek">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control col-10 col-md-12 form-control-sm" type="email" id="email" name="email" placeholder="nekdo@domena">
+                        </div>
+                        <div class="form-group">
+                            <label>Sporočilo</label>
+                            <textarea class="form-control col-10 col-md-12 form-control-sm" rows="4" name="sporocilo"></textarea>
+                        </div>
+                        <br>
+                        <p>
+                            <input type="submit" class="btn btn-primary btn-sm" id="poslji_podatke1" value="Pošlji podatke">
+                            <input type="reset" value="Zbriši podatke" class="btn btn-secondary btn-sm">
+                        </p>
+                    </form>        
+                    <div class="col-12 offset-0 col-md-7 offset-md-1">
+		                <table class="table table-striped table-bordered tabela">
+		                    <tr>
+		                        <th>Ime trgovine</th>
+		                        <th>Lokacija</th>
+		                        <th>Možen prevzem</th>
+		                    </tr>
+		                    <tr>
+		                        <td>Trgovina Maribor Tezno</td>
+		                        <td>Ulica Heroja Šercerja 15</td>
+		                        <td>DA</td>
+		                    </tr>
+		                    <tr>
+		                        <td>Trgovina Ljubljana Šiška</td>
+		                        <td>Ulica heroja bračiča</td>
+		                        <td>DA</td>
+		                    </tr>
+		                    <tr>
+		                        <td>Trgovina Ljubljana center</td>
+		                        <td>Prešernov trg 15</td>
+		                        <td>NE</td>
+		                    </tr>
+		                </table>
+		                
+		                <div id="googleMap"></div>
+		           </div>
+               </div>
+        </div>
+        <footer class="mt-5 bg-light">
+          <div class="row">
+            <div class="col-12">
+              <small>&copy; Spletno programiranje, LP-25</small>
+            </div>
+          </div>
+        </footer>
+    </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCza5yN4ZvvYhmoGuCp0eAZuyrV1_Qxx14&callback=myMap"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

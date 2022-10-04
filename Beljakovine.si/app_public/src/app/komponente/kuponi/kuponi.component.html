@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12 offset-0 col-md-7 offset-md-1">
+    <div *ngIf="sporocilo" class="alert alert-warning">{{sporocilo}}</div>
+    <div class="table-responsive" *ngIf="kuponi.length > 0">
+      <table class="table table-striped table-bordered" style="margin-top:3%">
+        <tr>
+          <th>Niz kupona</th>
+          <th>Popust (%)</th>
+          <th>Datum poteka</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let kupon of kuponi">
+          <td>{{kupon.niz}}</td>
+          <td>{{kupon.popust}}</td>
+          <td>{{kupon.datum  | datumPipe: 10}}</td>
+          <td><button data-id={{kupon._id}} [disabled]="!jePovezava()" (click)="odstraniKupon(kupon)" class="btn btn-danger">x</button></td>
+        </tr>
+      </table>
+    </div>
+    <button type="button" (click)="obrazec=true" *ngIf="jePovezava()" class="btn btn-dark float-right" style=" margin: 30px;margin-right: 70px">+</button>
+    <table class="table table-striped table-responsive" style="width: 90%; margin: 30px" id="dodajTabelo" *ngIf="obrazec">
+      <tr>
+        <th>Niz kupona</th>
+        <th>Popust (%)</th>
+        <th>Datum poteka</th>
+      </tr>
+      <tr>
+        <td>Samo črke in številke brez šumnikov</td>
+        <td>1-99</td>
+        <td>YYYY-MM-DD, letnica > 2000, veljaven mesec in dan</td>
+      </tr>
+      <tr>
+        <td><input [(ngModel)]="novKupon.niz" type="text" name="niz" class="form-control form-control-sm"></td>
+        <td><input [(ngModel)]="novKupon.popust" type="text" name="popust" class="form-control form-control-sm"></td>
+        <td><input [(ngModel)]="novKupon.datum" type="date" name="datum" class="form-control form-control-sm"></td>
+        <td><input [disabled]="!jePovezava()" (click)="dodajKupon()" type="submit" class="btn btn-success" value="dodajKupon"></td>
+      </tr>
+    </table>
+    <span class="alert alert-danger" *ngIf="napaka">{{napaka}}</span>
+  </div>
+</div>

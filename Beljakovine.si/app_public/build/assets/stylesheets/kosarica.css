@@ -1,0 +1,46 @@
+.slika-izdelek-kosarica {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+#stIzdelkov1-kosarica {
+    width:50%
+}
+#stIzdelkov2-kosarica {
+    width:50%
+}
+#kupon-kosarica {
+    margin-top: 7%;
+    margin-left: 3%;
+}
+#nazaj-kosarica {
+    margin-left: 5%;
+}
+#naprej-kosarica {
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+#bar-kosarica {
+    margin-top: 3%;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#izdelki-kosarica {
+    margin-top: 4%;
+}
+
+.naslov-zakljucek {
+    margin-top: 6%;
+    margin-left: 25%;
+}
+.izberiNaslov-zakljucek {
+    margin-top: 4.5%;
+    margin-left: 0.9%;
+}
+.nacin-zakljucek {
+    margin-top: 3%;
+    margin-left: 25%;
+}

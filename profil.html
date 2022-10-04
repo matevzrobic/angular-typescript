@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <title> Profil </title>
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/profil.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+    </head>
+    <body style="background-image: none;">
+        
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="index.html">Začetna stran</a>
+                <a href="#">Izdelki</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">☰</button>  
+                <img style="width: 150px; height: 40px;"src="img/logo_3.png">
+                <div class="iskanje">
+                    <input type="text" name="" class="iskanje-txt" placeholder="Search..."/>
+                    <a class="iskanje-btn">
+                     <i class="fas fa-search" style="color: orange;"></i>
+                    </a>
+                </div>
+                <div id="skupaj">
+                    <button class="far fa-user" style="position: absolute; left: 95%; border: none; background: white; top: 30px"></button>
+                    <div id="login_gumb" class="login_popup">
+                        <a style="text-decoration: none" href=".">Profil</a><br><a style="text-decoration: none;" href=".">Logout</a>
+                    </div>
+                </div>
+                <hr style="margin-bottom:0px;">
+			</div>
+			
+			<div id="sidebarProfil"> <!-- sidebar of profil -->
+				<ul class="col-12 col-sm-12 col-md-2 col-lg-2"style="margin-bottom: 0px;">
+					<li> <a href="#profil"> <h3>Profil</h3> </a> </li>
+					<li> <a href="#sprGesla">Sprememba Gesla</a>  </li>
+					<li> <a href="#zgoNakupov">Zgodovina Nakupov</a>  </li>
+					<li> <button class="" style=""> Odjava </button> </li>
+				</ul>
+			</div>
+			
+			
+			
+			<div id="profil" class="content col-12 col-sm-12 col-md-10 col-md-10"><!-- profil -->
+				<index> > profil </index> 
+				<form action="#">
+					<div class="form-group">
+						<label for="imepriimek"><strong>Ime in Priimek:</strong></label>
+						<input type="text" class="form-control col-md-6" id="imepriimek" placeholder="Marko Pokonc">
+					</div>
+					
+					<div class="form-group">
+						<label for="uporabniskoime"><strong>Uporabniško ime:</strong></label>
+						<input type="text" class="form-control col-md-6" id="uporabniskoime" placeholder="Marko P.">
+					</div>
+					
+					<div class="form-group">
+						<label for="email"><strong>Elektronski naslov:</strong></label>
+						<input type="email" class="form-control col-md-6" id="email" placeholder="marko.pokonc@lavbic.net" name="email">
+					</div>
+					
+					<div class="form-group">
+						<label for="datumrojstva"><strong>Datum rojstva:</strong></label>
+						<input type="date" class="form-control col-md-6" id="datumrojstva" >
+					</div>
+					
+					<br>
+					
+					<div class="form-group">
+						<label for="stalninaslov"><strong>Stalni naslov:</strong></label>
+						<input type="text" class="form-control col-md-6" id="stalnaulica" placeholder="Ulica in hišna številka" value="Krompirjeva 10">
+						<input type="text" class="form-control col-md-6" id="stalnikraj" placeholder="Kraj in poštna številka" value="Zagorje, 1410">
+					</div>
+					<div class="form-group">
+						<label for="postninaslov"><strong>Poštni naslov:</strong></label><br>
+						<label><input type="checkbox" name="same"> Enak kot stalni </label>
+						<input type="text" class="form-control col-md-6" id="postnaulica" placeholder="Ulica in hišna številka" value="Krompirjeva 10">
+						<input type="text" class="form-control col-md-6" id="postnikraj" placeholder="Kraj in poštna številka" value="Zagorje, 1410">
+					</div>
+					
+
+					<button type="submit" class="btn btn-outline-dark"> Shrani </button>
+				</form>
+			</div>
+			
+			<div id="sprGesla" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Sprememba gesla -->
+				<index> > spremeni geslo </index>
+				<form action="#">
+					
+					<div class="form-group">
+						<label for="geslo"><strong>Staro geslo:</strong></label>
+						<input type="password" class="form-control col-md-6" id="geslo" placeholder="Vnesi geslo" name="geslo">
+					</div>
+					
+					<div class="form-group">
+						<label for="geslo"><strong>Novo geslo:</strong></label>
+						<input type="password" class="form-control col-md-6" id="geslo" placeholder="Vnesi geslo" name="geslo">
+					</div>
+					<div class="form-group">
+						<label for="geslo"><strong>Potrdi novo geslo:</strong></label>
+						<input type="password" class="form-control col-md-6" id="geslo" placeholder="Vnesi geslo" name="geslo">
+					</div>
+					
+					<button type="submit" class="btn btn-outline-dark"> Spremeni </button>
+				</form>
+			</div>
+			
+			<div id="zgoNakupov" class="content col-12 col-sm-12 col-md-10 col-md-10"> <!-- Zgodovina nakupov -->
+				<index> > zgodovina nakupov </index>
+				<div class="nakup container-fluid">
+					<div class="row">
+						<div class="col-3 col-md-2"> #1304873301 </div>
+						<div class="col-3 col-md-7 col-lg-8"> 12.7.2020 </div>
+						
+						<div class="offset-1 col-2 offset-md-0 col-md-1"> 25% </div>
+						<div class="col-3 col-md-2 col-lg-1"><strong> 19.49€ </strong></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-1"> <i class="fas fa-sort"></i> </div>
+						<div class="col-5"></div>
+					</div>
+				</div>
+				
+				<div class="nakup container-fluid">
+					<div class="row">
+						<div class="col-10 col-md-2"> #1304823011 </div>
+						<div class="col-2 col-md-2"> 9.5.2020 </div>
+						
+						<table class="offset-1 offset-md-0 col-11 col-md-5">
+							<tr> <td> Impact Whey Protein Stevia, 2500g </td> <td> 34.99€ </td> </tr>
+							<tr> <td> Vitamin C plus, 180 tablet </td> <td> 19.99€ </td> </tr>
+							<tr> <td> Vegan Protein Blend, 1000g </td> <td> 20.99€ </td> </tr>
+						</table>
+					</div>
+					<div class="row justify-content-end">
+						<div class="col-2 col-sm-1 col-md-1"> 10% </div>
+						<div class="col-2 col-md-2 col-lg-1"><strong> 68.37€ </strong></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-1"> <i class="fas fa-sort"></i> </div>
+						<div class="col-5"></div>
+					</div>
+				</div>
+				
+				<div class="nakup container-fluid">
+					<div class="row">
+						<div class="col-3 col-md-2"> #1301280182 </div>
+						<div class="col-3 col-md-7 col-lg-8"> 25.2.2020 </div>
+						
+						<div class="offset-1 col-2 offset-md-0 col-md-1"> 0% </div>
+						<div class="col-3 col-md-2 col-lg-1"><strong> 78.56€ </strong></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-1"> <i class="fas fa-sort"></i> </div>
+						<div class="col-5"></div>
+					</div>
+				</div>
+				
+				<div class="nakup container-fluid">
+					<div class="row">
+						<div class="col-3 col-md-2"> #1271560528 </div>
+						<div class="col-3 col-md-7 col-lg-8"> 12.10.2019 </div>
+						
+						<div class="offset-1 col-2 offset-md-0 col-md-1"> 12% </div>
+						<div class="col-3 col-md-2 col-lg-1"><strong> 22.87€ </strong></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-1"> <i class="fas fa-sort"></i> </div>
+						<div class="col-5"></div>
+					</div>
+				</div>
+				
+				<button id="more" type="submit" class="btn btn-outline-dark"> Pokaži več </button>
+			</div>
+			
+			
+    </body>
+</html>

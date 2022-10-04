@@ -1,0 +1,94 @@
+<br>
+<body style="background-image: none;">
+    <form id="form" class="center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="d-flex justify-content-center">Prijava</h2>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="d-flex justify-content-center" style="font-size: 12px" for="email"><b>E-mail</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input [(ngModel)]="prijavaUporabnika.email" name="email" class="inputOkna" placeholder="Vnesi e-mail" id="email" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                            <label class="d-flex justify-content-center" style="font-size: 12px" for="psw"><b>Geslo</b></label>
+                    </div>
+                    <div style="text-align:center" class="col-md-12">
+                        <input [(ngModel)]="prijavaUporabnika.geslo" name="geslo" class="inputOkna" type="password" placeholder="Vnesi geslo" id="psw" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center;" class="row">
+                    <div class="col-md-12">
+                        <a routerLink="/registracija" style="color: black; font-size: 12px">Še niste registrirani?</a>
+                    </div>
+                    <div class="col-md-12">
+                        <a (click)="poslanMail = ''" data-toggle="modal" data-target="#popup" id="forgotPsw" style="color: black; font-size: 12px">Pozabljeno geslo?</a>
+                    </div>
+            </div>
+            <br>
+
+            <div *ngIf="obrazecNapaka" class="alert alert-danger" role="alert" >
+                {{obrazecNapaka}}
+            </div>
+
+            <div style="text-align:center" class="center">
+                <button (click)="posiljanjePodatkov()" [disabled]="!jePovezava()" class="button">Prijava</button>
+            </div>
+
+      <div *ngIf="poslanMail" class="alert alert-success">{{poslanMail}}</div>
+    </form>
+
+
+    <div id="popup" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pozabljeno geslo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Spodaj vnesite svoj e-mail naslov.</p>
+                    <input [(ngModel)]="pozabljenoGesloMail" class="inputOkna" type="email" placeholder="E-mail naslov" name="email" required>
+                    <i class="fa fa-envelope-o" style="font-size:24px; margin-left: 2em;"></i>
+                    <br>
+                    <p style="text-align: center">Sledite navodilom, ki Vam jih bomo poslali na e-mail.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="posljiMail()" class="btn btn-primary" >Pošlji</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zapri</button>
+                </div>
+                <div *ngIf="napacenMail" class="alert alert-danger" >{{napacenMail}}</div>
+            </div>
+        </div>
+    </div>
+        <!-- <div class="popup-content modal-content">
+            <h2 class="modal-title" style="text-align: center">Pozabljeno geslo</h2>
+            <p style="text-align: center">Spodaj vnesite svoj e-mail naslov.</p>
+            <input class="inputOkna" type="email" placeholder="E-mail naslov" name="email" required>
+            <i class="fa fa-envelope-o" style="font-size:24px; margin-left: 2em;"></i>
+            <br>
+            <hr>
+            <p style="text-align: center">Sledite navodilom, ki Vam jih bomo poslali na e-mail.</p>
+            <a href="">
+                <button style="text-align:center" class="button">
+                    Pošlji
+                </button>
+
+                <button style="text-align:center" class="button" alt="Close" class="close">
+                    Zapri
+                </button>
+            </a>
+        </div> -->
+</body>

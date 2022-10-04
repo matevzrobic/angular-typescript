@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator</title>
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/kalkulator.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="css/kalkulator.css">
+    </head>
+
+    <body style="background-image: none;">
+
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="Beljakovine.si/public/img/logo_3.png" style="width: 150px; height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Začetna stran <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="izdelki.html">Izdelki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kategorije
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Whey proteini</a>
+                        <a class="dropdown-item" href="#">Veganski proteini</a>
+                        <a class="dropdown-item" href="#">Bcaa</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="izdelki.html">Moška oblačila</a>
+                        <a class="dropdown-item" href="izdelki.html">Ženska oblačila</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                    </ul>
+                    
+                    <input class="form-control mr-sm-2 col-4 " type="search" placeholder="Search" aria-label="Search">
+                    <div id="skupaj">
+                        <button class="btn my-2 my-sm-0 far fa-user" type="submit"></button>
+                        <div id="login_gumb" class="login_popup">
+                            <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                        </div>
+                    </div>  
+                </div>
+            </nav>
+        </div>
+        <br>
+        
+        <div class="d-flex justify-content-center">
+
+
+            <form id="calc-form" class="calc-form">
+                <div class="form-polja">
+                    <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12">
+                        <label for="distance" class="pripis">Starost:</label>
+                        <div class="polje-items">
+                            <div class="polje polje-large">         
+                                <input type="text" name="age" id="age" inputmode="numeric" pattern="[0-9]*" required>
+                            </div>
+                            
+                            <div class="polje polje-medium">
+                                <select id="gender" name="gender">
+                                    <option value="Male">Moški</option>
+                                    <option value="Female">Ženska</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <label for="height" class="pripis">Višina:</label>
+                        <div class="polje-items">
+                            <div class="polje polje-medium">
+                                <input placeholder="v cm" type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*" required>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <label for="weight" class="pripis">Teža:</label>
+                        <div class="polje-items">
+                            <div class="polje polje-large">
+                                <input placeholder="v kg" type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*" required>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                </div>   
+                <div>
+                    <button id="calc" class="btn">Izračunaj</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- API calorie calculator -->
+        <div class="d-flex justify-content-center" id="results" style="display:none;">
+            <form class="calc-form">
+                
+                <div class="form-polja">
+                    <div class="polje-zunaj col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12">
+                        
+                        <label for="query" class="pripis">Iskanje hrane (angleščina):</label>
+                        <div class="polje-items">
+                            <div class="polje polje-large">         
+                                <input type="text" name="query" id="query" placeholder="1 large apple" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <button id="queryCalc" class="btn">Pridobi podatke</button>
+                </div>
+                
+            </form>
+        </div>
+
+    </body>
+</html>

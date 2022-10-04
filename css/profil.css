@@ -1,0 +1,196 @@
+ul {
+  list-style-type: none;
+  float:left;
+  width: 18%;
+  padding: 10px;
+}
+li{
+  float: left;
+  clear:left;
+  width:100%
+}
+li a {
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: block;
+  color:inherit;
+  width:100%;
+}
+li a:hover, #sidebarProfil button:hover{
+  background-color: black;
+  text-decoration: none;
+  color: white;
+}
+
+#sidebarProfil button {
+	padding: 14px 16px;
+	width:100%;
+	background: white;
+	border: none;
+}
+
+.content {
+	float:right;
+	top: 7px;
+	left:-7px;
+	padding: 16px;
+	border-radius: 6px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+index {
+	color: rgba(0,0,255,0.7);
+}
+index+*{ /*every item right after <index>*/
+	margin-top:1em;
+}
+
+#profil, #sprGesla, #zgoNakupov, #komentarji{
+  display: none;
+}
+
+#profil:target, #sprGesla:target, #zgoNakupov:target, #komentarji:target{
+  display: block;
+}
+
+.komentar, .nakup{
+	border: 1px solid #b0b0b0;
+	border-radius: 4px;
+	padding: 0.2em;
+	margin-bottom: 0.5em;
+}
+
+#more {
+	position: relative;
+	left: 47%;
+}
+
+/********copy from main**********/
+@keyframes fadein{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+} 
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+  
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	color: black;
+	background-color: white;
+	border: none;
+}
+
+.openbtn:hover {
+	background-color: #444;
+}
+  
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+	padding-bottom: 0px;
+}
+
+.iskanje {
+	position: absolute;
+	top: 45px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2f3640;
+	height: 35px;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.iskanje:hover > .iskanje-txt {
+	width: 240px;
+	padding: 0 6px;
+}
+
+.iskanje:hover > .iskanje-btn {
+	background: white;
+	color: black;
+}
+
+.iskanje-btn {
+	top: 20px;
+	color: #e84118;
+	float: right;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+	color: white;
+	cursor: pointer;
+}
+
+.iskanje-btn > i {
+	font-size: 15px;
+}
+
+.iskanje-txt {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 13px;
+	transition: 0.4s;
+	line-height: 20px;
+	width: 0px;
+	font-weight: bold;
+}
+
+.login_popup{
+  display: none;
+  position: absolute;
+  background-color: black;
+  left: 92.5%;
+  top: 50px;
+  margin: 10px;
+  padding: 15px;
+  height: 80px;
+}
+.login_popup a {
+  text-decoration:none;
+  color: white;
+}
+.login_popup a:hover{
+  color:white;
+}
+

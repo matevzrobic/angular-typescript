@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Katalog izdelkov</title>
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/9e203c4032.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/izdelki.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+      <div>
+        <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="index.html">Začetna stran</a>
+                <a href="izdelki.html">Izdelki</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">☰</button>  
+                <img style="width: 150px; height: 40px;"src="img/logo_3.png">
+                <div class="iskanje">
+                    <input type="text" name="" onkeyup="filtriranje()" id="search_input"  class="iskanje-txt" placeholder="Search..."/>
+                    <a class="iskanje-btn">
+                     <i class="fas fa-search" style="color: orange;"></i>
+                    </a>
+                </div>
+                <div id="skupaj">
+                    <button class="far fa-user" style="position: absolute; left: 95%; border: none; background: white; top: 30px"></button>
+                    <div id="login_gumb" class="login_popup">
+                        <a style="text-decoration: none" href="profil.html#profil">Profil</a><br><a style="text-decoration: none;" href="index.html">Logout</a>
+                    </div>
+                </div>
+        <hr>
+        <div class="filter-izdelkov">
+            <h3>Napredno iskanje</h3>
+            <hr>
+            <form>
+                <b>Izberite kategorijo izdelka:</b><br>
+                <input type="checkbox" id="whey" name="type" value="whey">
+                <label for="whey">Whey proteini</label><br>
+                <input type="checkbox" id="vegan" name="type" value="vegan">
+                <label for="vegan">Veganski proteini</label><br>
+                <input type="checkbox" id="bcaa" name="type" value="bcaa">
+                <label for="bcaa">Aminokisline</label><br>
+                <input type="checkbox" id="mOblacila" name="type" value="mOblacila">
+                <label for="mOblacila">Moška oblačila</label><br>
+                <input type="checkbox" id="zOblacila" name="type" value="zOblacila">
+                <label for="zOblacila">Ženska oblačila</label><br>
+            </form>
+            <hr>
+            <b>Cena:</b><br>
+            <i>Min:</i>
+            <input type="number" id="minCena" name="price" value="minCena" style="width:30%">
+            <i>Max:</i>
+            <input type="number" id="maxCena" name="price" value="maxCena" style="width:30%"><br>
+            <hr>
+            <form>
+                <b>Znamka:</b><br>
+                <input type="checkbox" id="vplab" name="brand" value="vplab">
+                <label for="vplab">Vplab</label><br>
+                <input type="checkbox" id="cellucor" name="brand" value="cellucor">
+                <label for="cellucor">Cellulor</label><br>
+                <input type="checkbox" id="ua" name="brand" value="ua">
+                <label for="ua">Under Armour</label><br>
+                <input type="checkbox" id="nike" name="brand" value="nike">
+                <label for="nike">Nike</label><br>
+                <input type="checkbox" id="olimp" name="brand" value="olimp">
+                <label for="olimp">Olimp</label><br>
+                <input type="checkbox" id="usn" name="brand" value="usn">
+                <label for="usn">USN</label><br>
+                <input type="checkbox" id="mp" name="brand" value="mp">
+                <label for="mp">MyProtein</label><br>
+                <input type="checkbox" id="sn" name="brand" value="sn">
+                <label for="sn">Scitec Nutrition</label><br>
+                <input type="checkbox" id="qnt" name="brand" value="qnt">
+                <label for="qnt">QNT</label><br>
+                <input type="checkbox" id="bsn" name="brand" value="bsn">
+                <label for="bsn">BSN</label><br>
+            </form>
+        </div>
+        <div class="row" id="vsi_izdelki">
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type="whey">
+              <div class="card h-70 sencenje">
+                <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/Gold Whey-CHOCOLATE 1000_r.jpg" alt="Gold Whey-CHOCOLATE 2,3kg"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="stran-izdelka.html">Gold Whey Protein Chocolate 2,3kg</a>
+                  </h4>
+                  <h5>49,99 €</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type="vegan">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/vegan-choco_r.jpg" alt="Vegan Choko protein"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Vegan chocko proteini 700g</a>
+                    </h4>
+                    <h5>24,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type="bcaa">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/bcaa.jpg" alt="BCAA Sport"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Cellucor BCAA Sport Watermelon</a>
+                    </h4>
+                    <h5>29,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type="whey">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/Syntha-6.jpg"  alt="Syntha-6 2,26kg"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Syntha-6 Whey proteini 2,26kg</a>
+                    </h4>
+                    <h5>34,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/light-digest-whey-protein.jpg"  alt="Light Digest Whey Protein 500g"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Light Digest Whey Protein 500g</a>
+                    </h4>
+                    <h5>14,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/scitec-whey-protein-isolate.jpg"  alt="Scitec Whey Protein Isolate 2kg"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Scitec Whey Protein Isolate 2kg</a>
+                    </h4>
+                    <h5>59,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/myprotein-impact-whey.jpg"  alt="Impact Whey Protein 1kg"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Impact Whey Protein 1kg</a>
+                    </h4>
+                    <h5>19,59 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/usn-100-plant-proteini-900g.jpg"  alt="USN 100% Plant Proteini 900g"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">USN 100% Plant Proteini 900g</a>
+                    </h4>
+                    <h5>24,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/usn-diet-fuel-vegan.jpg"  alt="USN Diet Fuel Vegan 889g"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">USN Diet Fuel Vegan 889g</a>
+                    </h4>
+                    <h5>19,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/olimp-veggie-protein-complex-500g.jpg"  alt="Olimp Veggie Protein Complex 500g"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Olimp Veggie Protein Complex 500g</a>
+                    </h4>
+                    <h5>24,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/nike-nk-dfc-tee.jpg" alt="M NK DFC TEE SW TRAINING"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">M NK DFC Tee SW Training</a>
+                    </h4>
+                    <h5>24,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/ua-pjt-rock-brahma-bull.jpg" alt="UA PJT ROCK BRAHMA BULL S"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">UA PJT Rock Brahma Bull S</a>
+                    </h4>
+                    <h5>34,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/ua-knit-training-shorts.jpg" alt="UA KNIT TRAINING SHORTS"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">UA Knit Training Shorts</a>
+                    </h4>
+                    <h5>44,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/Under-Armour-play-up-short-3-0-15327390-0.jpg" alt="PLAY UP SHORTS 3.0"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Play Up Shorts 3.0</a>
+                    </h4>
+                    <h5>25,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/Under-Armour-live-sportstyle-graphic-s-15570934-0.jpg" alt="LIVE SPORTSTYLE GRAPHIC S"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Live Sportstyle Graphic S</a>
+                    </h4>
+                    <h5>25,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+                <div class="card h-70 sencenje">
+                  <a href="stran-izdelka.html"><img class="card-img-top; slike-katalog" src="img/ua-armour-sport-hi-lo-ss.jpg" alt="ARMOUR SPORT HI-LO SS"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="stran-izdelka.html">Armour Sport Hi-Lo SS</a>
+                    </h4>
+                    <h5>34,99 €</h5>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4">
+              <div class="card h-70 sencenje">
+                <a href="dodajanje-izdelka.html"><img class="card-img-top; slike-katalog" src="img/plus.jpg" alt="ARMOUR SPORT HI-LO SS"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="dodajanje-izdelka.html">Dodaj izdelek</a>
+                  </h4>
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
+    </body>
+</html>

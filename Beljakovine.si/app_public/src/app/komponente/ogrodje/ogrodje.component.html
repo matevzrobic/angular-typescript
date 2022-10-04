@@ -1,0 +1,47 @@
+<div class="container-fuid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" routerLink=""><img src="/assets/img/logo_3.png" style="width: 150px; height: 40px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Začetna stran <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="izdelki">Izdelki</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="kalkulator">Kalkulator</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="kontakt">Kontakt</a>
+          </li>
+          <li *ngIf="jeAdmin()" class="nav-item">
+            <a class="nav-link" routerLink="kuponi">Kuponi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="db">DB</a>
+          </li>
+        </ul>
+          <input class="form-control mr-sm-2 col-4 " onkeyup="filtriranje()" id="search_input" type="search" placeholder="Search" aria-label="Search">
+          <strong aria-hidden="true" *ngIf="!jePovezava()">!</strong>
+          <ul class="navbar-nav justify-content-end">
+            <li *ngIf="!jePrijavljen()" class="nav-item" routerLinkActive="active">
+              <a routerLink="prijava" class="nav-link">Prijava</a>
+            </li>
+            <li id="jePrijavljen" *ngIf="jePrijavljen()" class="nav-item dropdown" routerLinkActive="active">
+              <a id="imePrijavljenega" class="nav-link dropdown-toggle" data-toggle="dropdown">{{vrniImeUporabnika() | uppercase}}</a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" routerLink="profil">Profil</a>
+                <a class="dropdown-item" routerLink="kosarica">Košarica</a>
+                <a class="dropdown-item" (click)="odjava()" >Odjava</a>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>

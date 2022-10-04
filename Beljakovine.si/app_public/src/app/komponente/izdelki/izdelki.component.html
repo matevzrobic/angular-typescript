@@ -1,0 +1,47 @@
+<body>
+    <div *ngIf="sporocilo;else other_content">
+        <div class="alert alert-warning col-11">{{sporocilo}}</div>
+    </div>
+    <ng-template #other_content>
+        <div class="row" id="vsi_izdelki" style="padding-left: 10%; padding-right:10%">
+            <div *ngFor="let izdelek of izdelki | slice: (page-1) * pageSize : page * pageSize" class="col-lg-4 col-xl-3 col-md-6 mb-4" data-type={{izdelek.kategorija}}>
+                <div class="card h-70 sencenje">
+                    <a routerLink="/izdelki/{{izdelek._id}}"><img class="card-img-top; slike-katalog" src="../../../assets/{{izdelek.slika}}" alt={{izdelek.naziv}}></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                        <a routerLink="/izdelki/{{izdelek._id}}">{{izdelek.naziv}}</a>
+                        </h4>
+                        <h5>{{izdelek.cena | currency}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xl-3 col-md-6 mb-4" *ngIf="adminB">
+                <div class="card h-70 sencenje">
+                    <a routerLink="/dodaj-izdelek"><img class="card-img-top; slike-katalog" src="../../../assets/img/plus.jpg" alt="Dodaj izdelek"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a *ngIf="jePovezava()" routerLink="/dodaj-izdelek">Dodaj izdelek</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" routerLink="/izdelki" (click)="paginacija(-1)" aria-label="Previous" name="prev">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" *ngFor="let i of numbers"><a class="page-link" routerLink="/izdelki" (click)="paginacija(i)">{{i}}</a></li>
+          <li class="page-item">
+            <a class="page-link" routerLink="/izdelki" aria-label="Next" name="next" (click)="paginacija(0)">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+</body>

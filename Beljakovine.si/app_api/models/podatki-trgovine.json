@@ -1,0 +1,23 @@
+[
+    {
+      "ime": "Poslovalnica Wolfova",
+      "lokacija": "Ljubljana",
+      "prevzem": "DA",
+      "lng": 14.50513,
+      "lat": 46.05108
+    },
+    {
+      "ime": "Poslovalnica Pobreška",
+      "lokacija": "Maribor",
+      "prevzem": "DA",
+      "lng": 15.64667,
+      "lat": 46.55472
+    },
+    {
+      "ime": "Poslovalnica Cesta železarjev",
+      "lokacija": "Jesenice",
+      "prevzem": "NE",
+      "lng": 14.06694,
+      "lat": 46.43056
+    }
+]
